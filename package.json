@@ -24,6 +24,7 @@
     "rollup-plugin-typescript2": "^0.26.0",
     "ts-jest": "^25.2.1",
     "tslib": "^1.11.1",
+    "tslint": "^6.0.0",
     "typescript": "^3.8.3"
   },
   "peerDependencies": {
@@ -31,7 +32,8 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "tslint": "tslint -c tslint.json 'src/**/*.ts'"
   },
   "jest": {
     "preset": "ts-jest",

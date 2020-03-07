@@ -5,4 +5,3 @@ const DateTimeRangePicker: React.FunctionComponent<{}> = () => {
 }
 
 export default DateTimeRangePicker
-
