@@ -1,3 +1,6 @@
+import react from 'react';
+import reactDom from 'react-dom';
+
 import typescript from 'rollup-plugin-typescript2'
 import sass from 'rollup-plugin-sass'
 import commonjs from '@rollup/plugin-commonjs'
@@ -29,15 +32,10 @@ export default {
         }),
         typescript(),
         commonjs({
-            include: ["node_modules/**"],
+            // include: ["node_modules/**"],
             namedExports: {
-                "node_modules/react/react.js": [
-                    "Children",
-                    "Component",
-                    "PropTypes",
-                    "createElement"
-                ],
-                "node_modules/react-dom/index.js": ["render"]
+                react: Object.keys(react),
+                'react-dom': Object.keys(reactDom)
             }
         }),
         sass({

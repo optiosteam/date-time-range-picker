@@ -15,15 +15,25 @@
       }
     }
 
-    .date-time-range-picker-header-prev {
-      position: absolute;
-      left: 0;
-      margin: .3em;
-    }
+    .date-time-range-picker-header-prev,
     .date-time-range-picker-header-next {
       position: absolute;
-      right: 0;
       margin: .3em;
+      border-radius: 2em;
+      height: 2em;
+      width: 2em;
+
+      &:hover {
+        background-color: rgba(blue, .1);
+      }
+    }
+
+    .date-time-range-picker-header-prev {
+      left: 0;
+    }
+
+    .date-time-range-picker-header-next {
+      right: 0;
     }
   }
 

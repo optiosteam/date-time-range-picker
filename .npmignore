@@ -2,3 +2,7 @@ src
 examples
 rollup.config.js
 tslint.json
+coverage
+.idea
+.github
+setupTests.ts

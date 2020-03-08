@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import moment from 'moment'
 
 import './DateTimeRangePicker.scss'
@@ -16,7 +16,7 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
         months = 1
     }
 ) => {
-    const [date, setDate] = useState(fromDate.clone())
+    const [date, setDate] = React.useState(fromDate.clone())
 
     const monthsArray = []
     for (let monthIndex = 0; monthIndex < months; monthIndex++) {
