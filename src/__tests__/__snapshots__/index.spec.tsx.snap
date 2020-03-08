@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`DateTimeRangePicker should render correctly 1`] = `
-<div>
-  Typescript react date time picker!
-</div>
-`;

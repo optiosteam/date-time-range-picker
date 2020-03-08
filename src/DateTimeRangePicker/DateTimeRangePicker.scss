@@ -1,0 +1,99 @@
+.date-time-range-picker {
+  position: relative;
+
+  .date-time-range-picker-header {
+    display: flex;
+    justify-content: space-between;
+
+    .date-time-range-picker-header-month {
+      width: 18.9em;
+
+      + {
+        .date-time-range-picker-header-month {
+          margin-left: 1em;
+        }
+      }
+    }
+
+    .date-time-range-picker-header-prev {
+      position: absolute;
+      left: 0;
+      margin: .3em;
+    }
+    .date-time-range-picker-header-next {
+      position: absolute;
+      right: 0;
+      margin: .3em;
+    }
+  }
+
+  .date-time-range-picker-months {
+    display: flex;
+    .date-time-range-picker-month {
+      width: 18.9em;
+
+      .date-time-range-picker-month-daynames {
+        display: flex;
+
+        > div {
+          width: 2.5em;
+          margin: .3em;
+        }
+      }
+
+      .date-time-range-picker-month-days {
+        display: flex;
+        flex-wrap: wrap;
+
+        > button {
+          width: 2.1em;
+          height: 2.1em;
+          background-color: rgba(black, .1);
+          border-radius: 1.5em;
+          margin: .3em;
+          cursor: pointer;
+
+          &:hover:not(.disabled) {
+            background-color: darkblue;
+            color: white;
+          }
+
+          &.other-month {
+            color: darkgray;
+          }
+
+          &.active {
+            background-color: green;
+            color: white;
+          }
+
+          &.disabled {
+            color: darkgray;
+            cursor: default;
+          }
+        }
+      }
+
+      .dummy-day {
+        width: 2.1em;
+        height: 2.1em;
+        display: block;
+        margin: .3em;
+      }
+
+      + .date-time-range-picker-month {
+        margin-left: 1em;
+      }
+    }
+  }
+
+  button {
+    display: block;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+  }
+}
