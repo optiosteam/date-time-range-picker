@@ -8,7 +8,7 @@ module.exports = {
     transform: {
         "^.+\\.tsx?$": "ts-jest"
     },
-    testMatch: ["**/*.test.(ts|tsx)"],
+    // testMatch: ["**/__tests__/*.test.(ts|tsx)"],
     moduleNameMapper: {
         "\\.(css|less|scss|sass)$": "identity-obj-proxy"
     },

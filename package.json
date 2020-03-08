@@ -28,7 +28,8 @@
     "tslint": "^6.0.0",
     "typescript": "^3.8.3"
   },
-  "peerDependencies": {
+  "dependencies": {
+    "moment": "^2.24.0",
     "react": "^16.3.0",
     "react-dom": "^16.13.0"
   },
@@ -46,8 +47,5 @@
   "bugs": {
     "url": "https://github.com/optiosteam/react-date-time-range-picker/issues"
   },
-  "homepage": "https://github.com/optiosteam/react-date-time-range-picker#readme",
-  "dependencies": {
-    "moment": "^2.24.0"
-  }
+  "homepage": "https://github.com/optiosteam/react-date-time-range-picker#readme"
 }

@@ -2,15 +2,34 @@
 
 exports[`DateTimeRangePicker should render correctly 1`] = `
 <div
-  className="test-component test-component-primary"
+  className="date-time-range-picker"
+  style={
+    Object {
+      "width": "38.8em",
+    }
+  }
 >
-  <h1
-    className="heading"
+  <Header
+    date={"2019-10-15T16:23:15.000Z"}
+    months={2}
+    onNextMonth={[Function]}
+    onPrevMonth={[Function]}
+  />
+  <div
+    className="date-time-range-picker-months"
   >
-    I'm the test component
-  </h1>
-  <h2>
-    Made with love by Harvey
-  </h2>
+    <Month
+      date={"2019-10-15T16:23:15.000Z"}
+      key="month0"
+      showDaysNextMonth={false}
+      showDaysPreviousMonth={true}
+    />
+    <Month
+      date={"2019-11-15T17:23:15.000Z"}
+      key="month1"
+      showDaysNextMonth={true}
+      showDaysPreviousMonth={false}
+    />
+  </div>
 </div>
 `;

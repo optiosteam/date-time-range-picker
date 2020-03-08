@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import moment from 'moment'
 
 import './DateTimeRangePicker.scss'
@@ -16,6 +16,8 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
         months = 1
     }
 ) => {
+    const [date, setDate] = useState(fromDate.clone())
+
     const monthsArray = []
     for (let monthIndex = 0; monthIndex < months; monthIndex++) {
         monthsArray.push(monthIndex)
@@ -24,12 +26,16 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
     const width = (18.9 * months) + (months - 1)
 
     return <div className={'date-time-range-picker'} style={{width: `${width}em`}}>
-        <Header date={fromDate} months={months}/>
+        <Header date={date}
+                months={months}
+                onPrevMonth={() => setDate(date.clone().subtract(1, 'month'))}
+                onNextMonth={() => setDate(date.clone().add(1, 'month'))}
+        />
         <div className={'date-time-range-picker-months'}>
             {monthsArray.map(
                 (monthIndex: number) => {
                     return (
-                        <Month date={fromDate.clone().add(monthIndex, 'months')}
+                        <Month date={date.clone().add(monthIndex, 'months')}
                                key={`month${monthIndex}`}
                                showDaysPreviousMonth={monthIndex === 0}
                                showDaysNextMonth={monthIndex === (months - 1)}
