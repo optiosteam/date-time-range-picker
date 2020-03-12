@@ -1,7 +1,7 @@
 {
   "name": "@optios/react-date-time-range-picker",
   "author": "",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React date/time range picker",
   "main": "build/index.js",
   "module": "build/index.es.js",
@@ -28,7 +28,7 @@
     "tslint": "^6.0.0",
     "typescript": "^3.8.3",
     "moment": "^2.24.0",
-    "react": "^16.13.0",
+    "react": "^16.3.0",
     "react-dom": "^16.13.0"
   },
   "peerDependencies": {
@@ -50,5 +50,8 @@
   "bugs": {
     "url": "https://github.com/optiosteam/react-date-time-range-picker/issues"
   },
-  "homepage": "https://github.com/optiosteam/react-date-time-range-picker#readme"
+  "homepage": "https://github.com/optiosteam/react-date-time-range-picker#readme",
+  "dependencies": {
+    "cleave.js": "^1.5.7"
+  }
 }

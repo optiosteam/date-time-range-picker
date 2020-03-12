@@ -1,12 +1,14 @@
-import moment from 'moment'
+import {Moment} from 'moment'
 
 interface IProps {
-    range: boolean,
-    time: boolean,
-    inline: boolean,
-    fromDate: moment.Moment,
-    untilDate: moment.Moment,
-    months: number
+    date?: boolean,
+    time?: boolean,
+    range?: boolean,
+    inline?: boolean,
+    fromDate?: Moment,
+    untilDate?: Moment,
+    months?: number,
+    onChange?: (fromDateTime: Moment, untilDateTime?: Moment) => void
 }
 
 export default IProps
