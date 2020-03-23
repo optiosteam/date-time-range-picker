@@ -1,7 +1,7 @@
 {
   "name": "@optios/react-date-time-range-picker",
   "author": "",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "React date/time range picker",
   "main": "build/index.js",
   "module": "build/index.es.js",
