@@ -5,7 +5,7 @@ $color-disabled: rgba(black, .4);
 
 .date-time-range-picker {
   position: relative;
-  display: flex;
+  margin-bottom: 1em;
 
   button {
     display: block;
@@ -22,16 +22,6 @@ $color-disabled: rgba(black, .4);
 
     > div + div {
       margin-left: 1em;
-    }
-  }
-
-  .date-time-range-picker-dates + .date-time-range-picker-times {
-    flex-direction: column;
-    padding: 2.9em 0 0 1em;
-
-    > div + div {
-      margin-left: 0;
-      margin-top: 1em;
     }
   }
 }

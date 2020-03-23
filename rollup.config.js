@@ -41,6 +41,14 @@ export default {
                     "useState"
                 ],
                 "node_modules/react-dom/index.js": ["render"],
+                "react": [
+                    "Children",
+                    "Component",
+                    "PropTypes",
+                    "createElement",
+                    "useState"
+                ],
+                "reactDom": ["render"],
             }
         }),
         sass({

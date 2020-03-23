@@ -9,7 +9,7 @@ const Header: React.FunctionComponent<IProps> = ({date, months, onPrevMonth, onN
     }
 
     return <div className={'date-time-range-picker-header'}>
-        <button className={'date-time-range-picker-header-prev'} onClick={onPrevMonth}>&laquo;</button>
+        <button className={'date-time-range-picker-header-prev'} onClick={onPrevMonth} type={'button'}>&laquo;</button>
         {monthsArray.map(
             (monthIndex: number) => {
                 return <div className={'date-time-range-picker-header-month'} key={`monthHeader${monthIndex}`}>
@@ -18,7 +18,7 @@ const Header: React.FunctionComponent<IProps> = ({date, months, onPrevMonth, onN
             }
         )}
 
-        <button className={'date-time-range-picker-header-next'} onClick={onNextMonth}>&raquo;</button>
+        <button className={'date-time-range-picker-header-next'} onClick={onNextMonth} type={'button'}>&raquo;</button>
     </div>
 }
 

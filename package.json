@@ -1,7 +1,7 @@
 {
   "name": "@optios/react-date-time-range-picker",
   "author": "",
-  "version": "0.0.2",
+  "version": "0.0.6",
   "description": "React date/time range picker",
   "main": "build/index.js",
   "module": "build/index.es.js",
@@ -27,9 +27,7 @@
     "tslib": "^1.11.1",
     "tslint": "^6.0.0",
     "typescript": "^3.8.3",
-    "moment": "^2.24.0",
-    "react": "^16.3.0",
-    "react-dom": "^16.13.0"
+    "moment": "^2.24.0"
   },
   "peerDependencies": {
     "moment": "^2.24.0",

@@ -31,11 +31,11 @@ const Month: React.FunctionComponent<IProps> = (
             const classNames = []
             if (! buttonDate.isSame(date, 'month')) {
                 if (buttonDate.isBefore(date) && ! showDaysPreviousMonth) {
-                    return <span className={'dummy-day'}/>
+                    return <span className={'dummy-day'} key={`day${buttonDate.format('YYYYMMDD')}`}/>
                 }
 
                 if (buttonDate.isAfter(date) && ! showDaysNextMonth) {
-                    return <span className={'dummy-day'}/>
+                    return <span className={'dummy-day'} key={`day${buttonDate.format('YYYYMMDD')}`}/>
                 }
 
                 classNames.push('other-month')
@@ -98,6 +98,7 @@ const Month: React.FunctionComponent<IProps> = (
                         onDayHover(buttonDate.clone())
                     }
                 }
+                type={'button'}
             >
                 {buttonDate.format('D')}
             </button>

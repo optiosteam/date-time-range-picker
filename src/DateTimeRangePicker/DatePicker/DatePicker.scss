@@ -11,7 +11,7 @@ $color-disabled: rgba(black, .4);
     justify-content: space-between;
 
     .date-time-range-picker-header-month {
-      width: 18.9em;
+      width: 19.3em;
       line-height: 2em;
       margin: .3em 0;
       text-align: center;
@@ -49,8 +49,11 @@ $color-disabled: rgba(black, .4);
 
   .date-time-range-picker-months {
     display: flex;
+    justify-content: space-between;
+
     .date-time-range-picker-month {
       width: 18.9em;
+      min-height: 18em;
 
       .date-time-range-picker-month-daynames {
         display: flex;

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import moment, {Moment} from 'moment'
 
 import './DateTimeRangePicker.scss'
@@ -19,13 +19,20 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
         onChange
     }
 ) => {
-    const [currentFromDate, setCurrentFromDate] = React.useState<Moment>(fromDate ? fromDate.clone() : undefined)
-    const [currentUntilDate, setCurrentUntilDate] = React.useState<Moment>(untilDate ? untilDate.clone() : undefined)
-    const [currentFromTime, setCurrentFromTime] = React.useState<Moment>(fromDate ? fromDate.clone() : undefined)
-    const [currentUntilTime, setCurrentUntilTime] = React.useState<Moment>(untilDate ? untilDate.clone() : undefined)
+    const [currentFromDate, setCurrentFromDate] = useState<Moment>(fromDate ? fromDate.clone() : undefined)
+    const [currentUntilDate, setCurrentUntilDate] = useState<Moment>(untilDate ? untilDate.clone() : undefined)
+    const [currentFromTime, setCurrentFromTime] = useState<Moment>(fromDate ? fromDate.clone() : undefined)
+    const [currentUntilTime, setCurrentUntilTime] = useState<Moment>(untilDate ? untilDate.clone() : undefined)
+    const [isMounted, setIsMounted] = useState<boolean>(false)
 
     useEffect(
         () => {
+            if (! isMounted) {
+                setIsMounted(true)
+
+                return
+            }
+
             if (! onChange) {
                 return
             }
@@ -47,7 +54,8 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
             }
 
             onChange(newFromDate, newUntilDate)
-        }
+        },
+        [currentFromDate, currentFromTime, currentUntilDate, currentUntilTime]
     )
 
     return <div className={'date-time-range-picker'}>
