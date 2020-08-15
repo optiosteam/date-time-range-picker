@@ -6,6 +6,7 @@ import IProps from './IProps'
 import TimePicker from './TimePicker/TimePicker'
 import DatePicker from './DatePicker/DatePicker'
 import Utils from './Utils'
+import {useTranslation} from 'react-i18next'
 
 const DateTimeRangePicker: React.FunctionComponent<IProps> = (
     {
@@ -24,6 +25,7 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
     const [currentFromTime, setCurrentFromTime] = useState<Moment>(fromDate ? fromDate.clone() : undefined)
     const [currentUntilTime, setCurrentUntilTime] = useState<Moment>(untilDate ? untilDate.clone() : undefined)
     const [isMounted, setIsMounted] = useState<boolean>(false)
+    const [t] = useTranslation()
 
     useEffect(
         () => {
@@ -83,7 +85,7 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
             time
                 ? <div className={'date-time-range-picker-times'}>
                     <div>
-                        <label>{range ? 'From' : 'Time'}</label>
+                        <label>{range ? t('From') : t('Time')}</label>
                         <TimePicker
                             step={15}
                             time={currentFromTime}
