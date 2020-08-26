@@ -1,0 +1,27 @@
+$color-highlight: #428be3;
+$color-background-day: rgba(black, .1);
+$color-other-month: rgba(black, .4);
+$color-disabled: rgba(black, .4);
+
+.date-time-range-picker {
+  position: relative;
+  margin-bottom: 1em;
+
+  button {
+    display: block;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+  }
+
+  .date-time-range-picker-times {
+    display: flex;
+
+    > div + div {
+      margin-left: 1em;
+    }
+  }
+}

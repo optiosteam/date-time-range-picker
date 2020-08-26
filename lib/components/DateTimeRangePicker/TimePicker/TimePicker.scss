@@ -1,0 +1,66 @@
+$color-highlight: #428be3;
+$color-label: rgba(black, .1);
+
+.date-time-range-picker {
+  label {
+    margin: 0;
+    color: $color-label;
+    min-height: auto;
+  }
+
+  .time-picker {
+    position: relative;
+
+    input {
+      padding: .3em 0;
+      text-align: center;
+      font-size: 1.5em;
+      width: 5em;
+      margin-top: .3em;
+    }
+
+    .time-picker-dropdown {
+      display: none;
+      position: absolute;
+      border: 1px solid $color-label;
+      width: 100%;
+      background: white;
+      height: 10em;
+      overflow-y: scroll;
+      overflow: -moz-scrollbars-none;
+      -ms-overflow-style: none;
+      z-index: 1;
+      box-sizing: border-box;
+
+      div {
+        padding: .4em;
+        text-align: center;
+
+        &:hover {
+          background-color: rgba(black, .1);
+          cursor: pointer;
+        }
+
+        &.active {
+          background-color: $color-highlight;
+          color: white;
+        }
+      }
+
+      &::-webkit-scrollbar {
+        width: 0 !important
+      }
+    }
+
+    .time-picker-input {
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    &.open {
+      .time-picker-dropdown {
+        display: block;
+      }
+    }
+  }
+}
