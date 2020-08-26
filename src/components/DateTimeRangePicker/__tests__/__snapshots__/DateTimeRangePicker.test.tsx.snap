@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DateTimeRangePicker should render correctly 1`] = `
+<div
+  className="date-time-range-picker"
+>
+  <DatePicker
+    fromDate={"2019-10-15T16:23:15.000Z"}
+    months={2}
+    onFromDateChanged={[Function]}
+    onUntilDateChanged={[Function]}
+    range={false}
+    untilDate={"2019-10-15T16:23:15.000Z"}
+  />
+</div>
+`;
