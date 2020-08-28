@@ -42,17 +42,12 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
                 return
             }
 
-            if (! range) {
-                onChange(newFromDate)
-
-                return
-            }
-
+            
             const newUntilDate = Utils.getDateTime(date, time, currentUntilDate, currentUntilTime)
             if (! newUntilDate) {
+                onChange(newFromDate, newFromDate)
                 return
             }
-
             onChange(newFromDate, newUntilDate)
         },
         [currentFromDate, currentFromTime, currentUntilDate, currentUntilTime]
@@ -66,12 +61,12 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
                 fromDate={currentFromDate}
                 untilDate={currentUntilDate}
                 onFromDateChanged={
-                    (changedDate: Moment) => {
+                    (changedDate: Moment | undefined) => {
                         setCurrentFromDate(changedDate)
                     }
                 }
                 onUntilDateChanged={
-                    (changedDate: Moment) => {
+                    (changedDate: Moment | undefined) => {
                         setCurrentUntilDate(changedDate)
                     }
                 }

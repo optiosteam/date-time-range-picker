@@ -9,7 +9,7 @@ interface IProps {
     showDaysPreviousMonth: boolean,
     showDaysNextMonth: boolean,
     onDaySelected: (date: Moment) => void,
-    onDayHover: (date?: Moment) => void
+    onDayHover: (date?: Moment | undefined) => void
 }
 
 export default IProps

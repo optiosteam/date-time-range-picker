@@ -1,5 +1,5 @@
 {
-  "name": "library-shell",
+  "name": "@optios/react-date-time-range-picker",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -27,11 +27,15 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "compile": "babel src --out-dir lib --copy-files"
+    "rollup": "rollup -c",
+    "rollup-watch": "rollup -c -w"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "files": [
+    "dist"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
@@ -44,8 +48,15 @@
       "last 1 safari version"
     ]
   },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "moment": "^2.24.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.11.4",
+    "@rollup/plugin-commonjs": "^15.0.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
     "@storybook/addon-actions": "^6.0.18",
     "@storybook/addon-essentials": "^6.0.18",
     "@storybook/addon-links": "^6.0.18",
@@ -53,7 +64,30 @@
     "@storybook/preset-create-react-app": "^3.1.4",
     "@storybook/react": "^6.0.18",
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-loader": "^8.1.0",
-    "react-is": "^16.13.1"
-  }
+    "babel-runtime": "^6.26.0",
+    "lodash": "^4.17.20",
+    "react-is": "^16.13.1",
+    "rollup": "^2.26.6",
+    "rollup-plugin-peer-deps-external": "^2.2.3",
+    "rollup-plugin-sass": "^1.2.2",
+    "rollup-plugin-typescript2": "^0.27.2",
+    "webpack": "^4.44.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/optiosteam/react-date-time-range-picker.git"
+  },
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/optiosteam/react-date-time-range-picker/issues"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "homepage": "https://github.com/optiosteam/react-date-time-range-picker#readme",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "keywords": [],
+  "author": ""
 }
