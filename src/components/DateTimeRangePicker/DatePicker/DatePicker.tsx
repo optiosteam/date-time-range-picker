@@ -49,7 +49,6 @@ const DatePicker: React.FunctionComponent<IProps> = (
                                        if (!fromDate || (fromDate && untilDate)) {
                                            onFromDateChanged(selectedDate.clone())
                                            onUntilDateChanged(range ? undefined : selectedDate.clone())
-
                                            return
                                        }
 
@@ -64,7 +63,7 @@ const DatePicker: React.FunctionComponent<IProps> = (
                                    }
                                }
                                onDayHover={
-                                   (onHoverDate: Moment) => {
+                                   (onHoverDate: Moment | undefined) => {
                                        setHoverDate(onHoverDate)
                                    }
                                }

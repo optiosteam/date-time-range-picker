@@ -6,10 +6,10 @@ import IProps from './IProps'
 import './TimePicker.scss'
 
 const TimePicker: FunctionComponent<IProps> = ({ step = 15, onTimeChanged, time}) => {
-    const [currentValue, setCurrentValue] = useState<string>(time ? time.format('HH:mm') : undefined)
+    const [currentValue, setCurrentValue] = useState<string | undefined>(time ? time.format('HH:mm') : undefined)
     const [isOpen, setIsOpen] = useState<boolean>(false)
-    const dropdownRef = useRef<HTMLDivElement>()
-    const activeDropdownRef = useRef<HTMLDivElement>()
+    const dropdownRef = useRef<HTMLDivElement | any>()
+    const activeDropdownRef = useRef<HTMLDivElement | any>()
     let inputRef: HTMLInputElement
 
     const onChange = (e: SyntheticEvent<HTMLInputElement>) => {
@@ -82,7 +82,7 @@ const TimePicker: FunctionComponent<IProps> = ({ step = 15, onTimeChanged, time}
                 value={currentValue}
                 className={'time-picker-input'}
                 onKeyDown={
-                    (e: KeyboardEvent) => {
+                    (e: KeyboardEvent | any) => {
                         if (e.key === 'Enter' && inputRef) {
                             inputRef.blur()
                         }
