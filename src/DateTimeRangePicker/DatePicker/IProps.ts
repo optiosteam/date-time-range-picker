@@ -5,8 +5,8 @@ interface IProps {
     fromDate?: moment.Moment,
     untilDate?: moment.Moment,
     months: number,
-    onFromDateChanged: (date: Moment) => void
-    onUntilDateChanged: (date: Moment) => void
+    onFromDateChanged: (date: Moment | undefined) => void
+    onUntilDateChanged: (date: Moment | undefined) => void
 }
 
 export default IProps
