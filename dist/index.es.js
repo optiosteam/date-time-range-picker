@@ -3105,5 +3105,5 @@ var DateTimeRangePicker = function (_a) {
             : null);
 };
 
-export default DateTimeRangePicker;
+export { DateTimeRangePicker };
 //# sourceMappingURL=index.es.js.map

@@ -3114,5 +3114,5 @@ var DateTimeRangePicker = function (_a) {
             : null);
 };
 
-exports.default = DateTimeRangePicker;
+exports.DateTimeRangePicker = DateTimeRangePicker;
 //# sourceMappingURL=index.js.map
