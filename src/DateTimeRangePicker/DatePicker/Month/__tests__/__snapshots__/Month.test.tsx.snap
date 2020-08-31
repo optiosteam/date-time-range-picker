@@ -38,6 +38,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200426"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       26
     </button>
@@ -46,6 +47,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200427"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       27
     </button>
@@ -54,6 +56,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200428"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       28
     </button>
@@ -62,6 +65,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200429"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       29
     </button>
@@ -70,6 +74,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200430"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       30
     </button>
@@ -78,6 +83,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200501"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       1
     </button>
@@ -86,6 +92,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200502"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       2
     </button>
@@ -94,6 +101,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200503"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       3
     </button>
@@ -102,6 +110,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200504"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       4
     </button>
@@ -110,6 +119,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200505"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       5
     </button>
@@ -118,6 +128,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200506"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       6
     </button>
@@ -126,6 +137,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200507"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       7
     </button>
@@ -134,6 +146,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200508"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       8
     </button>
@@ -142,6 +155,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200509"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       9
     </button>
@@ -150,6 +164,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200510"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       10
     </button>
@@ -158,6 +173,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200511"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       11
     </button>
@@ -166,6 +182,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200512"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       12
     </button>
@@ -174,6 +191,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200513"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       13
     </button>
@@ -182,6 +200,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200514"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       14
     </button>
@@ -190,6 +209,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200515"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       15
     </button>
@@ -198,6 +218,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200516"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       16
     </button>
@@ -206,6 +227,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200517"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       17
     </button>
@@ -214,6 +236,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200518"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       18
     </button>
@@ -222,6 +245,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200519"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       19
     </button>
@@ -230,6 +254,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200520"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       20
     </button>
@@ -238,6 +263,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200521"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       21
     </button>
@@ -246,6 +272,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200522"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       22
     </button>
@@ -254,6 +281,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200523"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       23
     </button>
@@ -262,6 +290,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200524"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       24
     </button>
@@ -270,6 +299,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200525"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       25
     </button>
@@ -278,6 +308,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200526"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       26
     </button>
@@ -286,6 +317,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200527"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       27
     </button>
@@ -294,6 +326,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200528"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       28
     </button>
@@ -302,6 +335,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200529"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       29
     </button>
@@ -310,6 +344,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200530"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       30
     </button>
@@ -318,6 +353,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200531"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       31
     </button>
@@ -326,6 +362,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200601"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       1
     </button>
@@ -334,6 +371,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200602"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       2
     </button>
@@ -342,6 +380,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200603"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       3
     </button>
@@ -350,6 +389,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200604"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       4
     </button>
@@ -358,6 +398,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200605"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       5
     </button>
@@ -366,6 +407,7 @@ exports[`Date/time range picker month renders hover 1`] = `
       key="day20200606"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       6
     </button>
@@ -411,6 +453,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200426"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       26
     </button>
@@ -419,6 +462,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200427"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       27
     </button>
@@ -427,6 +471,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200428"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       28
     </button>
@@ -435,6 +480,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200429"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       29
     </button>
@@ -443,6 +489,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200430"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       30
     </button>
@@ -451,6 +498,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200501"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       1
     </button>
@@ -459,6 +507,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200502"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       2
     </button>
@@ -467,6 +516,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200503"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       3
     </button>
@@ -475,6 +525,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200504"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       4
     </button>
@@ -483,6 +534,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200505"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       5
     </button>
@@ -491,6 +543,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200506"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       6
     </button>
@@ -499,6 +552,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200507"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       7
     </button>
@@ -507,6 +561,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200508"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       8
     </button>
@@ -515,6 +570,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200509"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       9
     </button>
@@ -523,6 +579,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200510"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       10
     </button>
@@ -531,6 +588,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200511"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       11
     </button>
@@ -539,6 +597,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200512"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       12
     </button>
@@ -547,6 +606,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200513"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       13
     </button>
@@ -555,6 +615,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200514"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       14
     </button>
@@ -563,6 +624,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200515"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       15
     </button>
@@ -571,6 +633,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200516"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       16
     </button>
@@ -579,6 +642,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200517"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       17
     </button>
@@ -587,6 +651,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200518"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       18
     </button>
@@ -595,6 +660,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200519"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       19
     </button>
@@ -603,6 +669,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200520"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       20
     </button>
@@ -611,6 +678,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200521"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       21
     </button>
@@ -619,6 +687,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200522"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       22
     </button>
@@ -627,6 +696,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200523"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       23
     </button>
@@ -635,6 +705,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200524"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       24
     </button>
@@ -643,6 +714,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200525"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       25
     </button>
@@ -651,6 +723,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200526"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       26
     </button>
@@ -659,6 +732,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200527"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       27
     </button>
@@ -667,6 +741,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200528"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       28
     </button>
@@ -675,6 +750,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200529"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       29
     </button>
@@ -683,6 +759,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200530"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       30
     </button>
@@ -691,6 +768,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200531"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       31
     </button>
@@ -699,6 +777,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200601"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       1
     </button>
@@ -707,6 +786,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200602"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       2
     </button>
@@ -715,6 +795,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200603"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       3
     </button>
@@ -723,6 +804,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200604"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       4
     </button>
@@ -731,6 +813,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200605"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       5
     </button>
@@ -739,6 +822,7 @@ exports[`Date/time range picker month renders range 1`] = `
       key="day20200606"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       6
     </button>
@@ -784,6 +868,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200426"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       26
     </button>
@@ -792,6 +877,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200427"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       27
     </button>
@@ -800,6 +886,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200428"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       28
     </button>
@@ -808,6 +895,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200429"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       29
     </button>
@@ -816,6 +904,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200430"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       30
     </button>
@@ -824,6 +913,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200501"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       1
     </button>
@@ -832,6 +922,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200502"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       2
     </button>
@@ -840,6 +931,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200503"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       3
     </button>
@@ -848,6 +940,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200504"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       4
     </button>
@@ -856,6 +949,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200505"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       5
     </button>
@@ -864,6 +958,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200506"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       6
     </button>
@@ -872,6 +967,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200507"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       7
     </button>
@@ -880,6 +976,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200508"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       8
     </button>
@@ -888,6 +985,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200509"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       9
     </button>
@@ -896,6 +994,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200510"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       10
     </button>
@@ -904,6 +1003,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200511"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       11
     </button>
@@ -912,6 +1012,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200512"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       12
     </button>
@@ -920,6 +1021,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200513"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       13
     </button>
@@ -928,6 +1030,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200514"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       14
     </button>
@@ -936,6 +1039,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200515"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       15
     </button>
@@ -944,6 +1048,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200516"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       16
     </button>
@@ -952,6 +1057,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200517"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       17
     </button>
@@ -960,6 +1066,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200518"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       18
     </button>
@@ -968,6 +1075,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200519"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       19
     </button>
@@ -976,6 +1084,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200520"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       20
     </button>
@@ -984,6 +1093,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200521"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       21
     </button>
@@ -992,6 +1102,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200522"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       22
     </button>
@@ -1000,6 +1111,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200523"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       23
     </button>
@@ -1008,6 +1120,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200524"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       24
     </button>
@@ -1016,6 +1129,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200525"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       25
     </button>
@@ -1024,6 +1138,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200526"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       26
     </button>
@@ -1032,6 +1147,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200527"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       27
     </button>
@@ -1040,6 +1156,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200528"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       28
     </button>
@@ -1048,6 +1165,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200529"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       29
     </button>
@@ -1056,6 +1174,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200530"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       30
     </button>
@@ -1064,6 +1183,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200531"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       31
     </button>
@@ -1072,6 +1192,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200601"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       1
     </button>
@@ -1080,6 +1201,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200602"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       2
     </button>
@@ -1088,6 +1210,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200603"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       3
     </button>
@@ -1096,6 +1219,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200604"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       4
     </button>
@@ -1104,6 +1228,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200605"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       5
     </button>
@@ -1112,6 +1237,7 @@ exports[`Date/time range picker month should render correctly 1`] = `
       key="day20200606"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      type="button"
     >
       6
     </button>

@@ -7,6 +7,7 @@ exports[`Date/time range picker header should render correctly 1`] = `
   <button
     className="date-time-range-picker-header-prev"
     onClick={[Function]}
+    type="button"
   >
     «
   </button>
@@ -19,6 +20,7 @@ exports[`Date/time range picker header should render correctly 1`] = `
   <button
     className="date-time-range-picker-header-next"
     onClick={[Function]}
+    type="button"
   >
     »
   </button>
