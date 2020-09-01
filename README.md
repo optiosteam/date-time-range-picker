@@ -1,5 +1,7 @@
 # React date/time range picker
 
+:warning: WORK IN PROGRESS
+
 React date/time range picker is a javascript library for react that presents
  a nice and useable calender. Single dates and ranges are supported.
 
