@@ -23,6 +23,7 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
     "sass": "^1.26.10",
+    "tslint": "^6.1.3",
     "typescript": "~3.7.2"
   },
   "scripts": {
@@ -33,7 +34,8 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "rollup": "rollup -c",
-    "rollup-watch": "rollup -c -w"
+    "rollup-watch": "rollup -c -w",
+    "tslint": "tslint -c tslint.json 'src/**/*.ts?(x)'"
   },
   "eslintConfig": {
     "extends": "react-app"

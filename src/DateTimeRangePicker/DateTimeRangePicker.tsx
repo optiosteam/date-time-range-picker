@@ -20,9 +20,13 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
     }
 ) => {
     const [currentFromDate, setCurrentFromDate] = useState<Moment | undefined>(fromDate ? fromDate.clone() : undefined)
-    const [currentUntilDate, setCurrentUntilDate] = useState<Moment | undefined>(untilDate ? untilDate.clone() : undefined)
+    const [currentUntilDate, setCurrentUntilDate] = useState<Moment | undefined>(
+        untilDate ? untilDate.clone() : undefined
+    )
     const [currentFromTime, setCurrentFromTime] = useState<Moment | undefined>(fromDate ? fromDate.clone() : undefined)
-    const [currentUntilTime, setCurrentUntilTime] = useState<Moment | undefined>(untilDate ? untilDate.clone() : undefined)
+    const [currentUntilTime, setCurrentUntilTime] = useState<Moment | undefined>
+    (untilDate ? untilDate.clone() : undefined
+    )
     const [isMounted, setIsMounted] = useState<boolean>(false)
 
     useEffect(
@@ -42,7 +46,6 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
                 return
             }
 
-            
             const newUntilDate = Utils.getDateTime(date, time, currentUntilDate, currentUntilTime)
             if (! newUntilDate) {
                 onChange(newFromDate, newFromDate)

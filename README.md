@@ -23,10 +23,10 @@ import DateTimeRangePicker from '@optios/react-date-time-range-picker'
 </div>
 ```
 Example with property Time enabled
-![Time picture](https://imgur.com/eUouWen)
+![Time picture](https://i.imgur.com/eUouWen.png)
 
 Example with property Range enabled
-![Range picture](https://imgur.com/aZhwQWO)
+![Range picture](https://i.imgur.com/aZhwQWO.png)
 
 ## Properties
 
