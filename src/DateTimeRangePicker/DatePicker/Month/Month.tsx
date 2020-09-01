@@ -121,6 +121,4 @@ const Month: React.FunctionComponent<IProps> = (
     </div>
 }
 
-
-
 export default Month

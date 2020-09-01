@@ -1,5 +1,5 @@
-import typescript from 'rollup-plugin-typescript2'
 import sass from 'rollup-plugin-sass'
+import typescript from 'rollup-plugin-typescript2'
 import commonjs from '@rollup/plugin-commonjs'
 import external from 'rollup-plugin-peer-deps-external'
 import resolve from '@rollup/plugin-node-resolve'
@@ -10,24 +10,26 @@ export default {
     input: 'src/index.ts',
     output: [
         {
-            file: pkg.main,
-            format: 'cjs',
-            exports: 'named',
-            sourcemap: true
+        file: pkg.main,
+        format: 'cjs',
+        exports: 'named',
+        sourcemap: true,
+        strict: false
         },
         {
-            file: pkg.module,
-            format: 'es',
-            exports: 'named',
-            sourcemap: true
-        }
+        file: pkg.module,
+        format: 'es',
+        exports: 'named',
+        sourcemap: true
+    }
     ],
     plugins: [
+        sass({ insert: true }),
+        typescript({ objectHashIgnoreUnknownHack: true }),
         external(),
         resolve({
             browser: true
         }),
-        typescript(),
         commonjs({
             // include: ["node_modules/**"],
             namedExports: {
@@ -51,8 +53,6 @@ export default {
                 "reactDom": ["render"],
             }
         }),
-        sass({
-            insert: true
-        })
-    ]
+    ],
+    external: ['react', 'react-dom']
 }

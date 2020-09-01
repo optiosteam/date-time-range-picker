@@ -19,10 +19,14 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
         onChange
     }
 ) => {
-    const [currentFromDate, setCurrentFromDate] = useState<Moment>(fromDate ? fromDate.clone() : undefined)
-    const [currentUntilDate, setCurrentUntilDate] = useState<Moment>(untilDate ? untilDate.clone() : undefined)
-    const [currentFromTime, setCurrentFromTime] = useState<Moment>(fromDate ? fromDate.clone() : undefined)
-    const [currentUntilTime, setCurrentUntilTime] = useState<Moment>(untilDate ? untilDate.clone() : undefined)
+    const [currentFromDate, setCurrentFromDate] = useState<Moment | undefined>(fromDate ? fromDate.clone() : undefined)
+    const [currentUntilDate, setCurrentUntilDate] = useState<Moment | undefined>(
+        untilDate ? untilDate.clone() : undefined
+    )
+    const [currentFromTime, setCurrentFromTime] = useState<Moment | undefined>(fromDate ? fromDate.clone() : undefined)
+    const [currentUntilTime, setCurrentUntilTime] = useState<Moment | undefined>
+    (untilDate ? untilDate.clone() : undefined
+    )
     const [isMounted, setIsMounted] = useState<boolean>(false)
 
     useEffect(
@@ -42,17 +46,11 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
                 return
             }
 
-            if (! range) {
-                onChange(newFromDate)
-
-                return
-            }
-
             const newUntilDate = Utils.getDateTime(date, time, currentUntilDate, currentUntilTime)
             if (! newUntilDate) {
+                onChange(newFromDate, newFromDate)
                 return
             }
-
             onChange(newFromDate, newUntilDate)
         },
         [currentFromDate, currentFromTime, currentUntilDate, currentUntilTime]
@@ -66,12 +64,12 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
                 fromDate={currentFromDate}
                 untilDate={currentUntilDate}
                 onFromDateChanged={
-                    (changedDate: Moment) => {
+                    (changedDate: Moment | undefined) => {
                         setCurrentFromDate(changedDate)
                     }
                 }
                 onUntilDateChanged={
-                    (changedDate: Moment) => {
+                    (changedDate: Moment | undefined) => {
                         setCurrentUntilDate(changedDate)
                     }
                 }
