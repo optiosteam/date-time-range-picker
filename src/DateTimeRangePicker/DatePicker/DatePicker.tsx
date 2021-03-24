@@ -9,6 +9,7 @@ import Header from './Header/Header'
 const DatePicker: React.FunctionComponent<IProps> = (
     {
         range = false,
+        displayRanges,
         fromDate,
         untilDate,
         months = 1,
@@ -67,6 +68,7 @@ const DatePicker: React.FunctionComponent<IProps> = (
                                        setHoverDate(onHoverDate)
                                    }
                                }
+                               displayRanges={displayRanges}
                         />
                     )
                 }

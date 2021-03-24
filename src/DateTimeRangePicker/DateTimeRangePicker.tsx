@@ -6,11 +6,13 @@ import IProps from './IProps'
 import TimePicker from './TimePicker/TimePicker'
 import DatePicker from './DatePicker/DatePicker'
 import Utils from './Utils'
+import {Simulate} from 'react-dom/test-utils'
 
 const DateTimeRangePicker: React.FunctionComponent<IProps> = (
     {
         date = true,
         range = false,
+        displayRanges = [],
         time = false,
         inline = true,
         fromDate,
@@ -19,6 +21,17 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
         onChange
     }
 ) => {
+    const currentDate = moment()
+    const endDate = currentDate.clone().add(7, 'days');
+
+    const dummyDates = []
+    while (currentDate.isBefore(endDate)) {
+        dummyDates.push(currentDate.clone())
+        currentDate.add(1, 'day')
+    }
+    console.log(dummyDates)
+    displayRanges = [dummyDates]
+
     const [currentFromDate, setCurrentFromDate] = useState<Moment | undefined>(fromDate ? fromDate.clone() : undefined)
     const [currentUntilDate, setCurrentUntilDate] = useState<Moment | undefined>(
         untilDate ? untilDate.clone() : undefined
@@ -56,10 +69,12 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
         [currentFromDate, currentFromTime, currentUntilDate, currentUntilTime]
     )
 
+    // return <p>test</p>
     return <div className={'date-time-range-picker'}>
         {date
             ? <DatePicker
                 range={range}
+                displayRanges={displayRanges}
                 months={months}
                 fromDate={currentFromDate}
                 untilDate={currentUntilDate}

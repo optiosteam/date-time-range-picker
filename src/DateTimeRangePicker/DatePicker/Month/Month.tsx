@@ -5,6 +5,7 @@ import IProps from './IProps'
 
 const Month: React.FunctionComponent<IProps> = (
     {
+        displayRanges,
         month,
         year,
         fromDate,
@@ -26,15 +27,38 @@ const Month: React.FunctionComponent<IProps> = (
             dates.push(currentDate.clone())
             currentDate.add(1, 'day')
         }
+        
+        // todo
+        return displayRanges[0].map((buttonDate: Moment) => {
+            const classNames = []
+            classNames.push('already-selected')
+            return <button
+                key={`day${buttonDate.format('YYYYMMDD')}`}
+                className={classNames.join(' ')}
+                onClick={
+                    () => {
+                        onDaySelected(buttonDate.clone())
+                    }
+                }
+                onMouseEnter={
+                    () => {
+                        onDayHover(buttonDate.clone())
+                    }
+                }
+                type={'button'}
+            >
+                {buttonDate.format('D')}
+            </button>
+        })
 
         return dates.map((buttonDate: Moment) => {
             const classNames = []
-            if (! buttonDate.isSame(date, 'month')) {
-                if (buttonDate.isBefore(date) && ! showDaysPreviousMonth) {
+            if (!buttonDate.isSame(date, 'month')) {
+                if (buttonDate.isBefore(date) && !showDaysPreviousMonth) {
                     return <span className={'dummy-day'} key={`day${buttonDate.format('YYYYMMDD')}`}/>
                 }
 
-                if (buttonDate.isAfter(date) && ! showDaysNextMonth) {
+                if (buttonDate.isAfter(date) && !showDaysNextMonth) {
                     return <span className={'dummy-day'} key={`day${buttonDate.format('YYYYMMDD')}`}/>
                 }
 
