@@ -1,8 +1,7 @@
-import React, {ReactElement} from 'react'
+import React, {ReactElement, useState} from 'react'
 import moment, {Moment} from 'moment'
 
 import IProps from './IProps'
-import {CalendarButton} from './style'
 
 const Month: React.FunctionComponent<IProps> = (
     {
@@ -31,22 +30,11 @@ const Month: React.FunctionComponent<IProps> = (
 
         return dates.map((buttonDate: Moment) => {
             const classNames = []
-                let active: boolean = false
-                let alreadySelected: string|undefined
-                let activeFromDate: boolean = false
-                let activeUntilDate: boolean = false
-                let otherMonth: boolean = false
-                let activeFromDateReverse: boolean = false
-                let inRange: boolean = false
-                let hover: boolean = false
-                let hoverPast: boolean = false
-                let hoverFuture: boolean = false
 
             displayRanges.forEach(displayRange => {
                 displayRange.forEach(date => {
                     if (date.isSame(buttonDate, 'day')) {
                         classNames.push('already-selected')
-                        alreadySelected = 'red'
                         if (displayRange[0].isSame(date)) {
                             classNames.push('active-from-date')
 
@@ -67,12 +55,10 @@ const Month: React.FunctionComponent<IProps> = (
                 }
 
                 classNames.push('other-month')
-                otherMonth = true
             }
 
             if (fromDate && buttonDate.isSame(fromDate, 'day')) {
                 classNames.push('active')
-                active = true
                 classNames.push('active-from-date')
 
                 if (!untilDate && hoverDate && hoverDate.isBefore(buttonDate, 'day')) {
@@ -115,27 +101,7 @@ const Month: React.FunctionComponent<IProps> = (
                 }
             }
 
-            return <CalendarButton
-                key={`day${buttonDate.format('YYYYMMDD')}`}
-                onClick={
-                    () => {
-                        onDaySelected(buttonDate.clone())
-                    }
-                }
-                onMouseEnter={
-                    () => {
-                        onDayHover(buttonDate.clone())
-                    }
-                }
-                type={'button'}
-                otherMonth={otherMonth}
-                active={active}
-                alreadySelected={alreadySelected}
-            >
-                {buttonDate.format('D')}
-            </CalendarButton>
-
-            /*<button
+            return <button
                 key={`day${buttonDate.format('YYYYMMDD')}`}
                 className={classNames.join(' ')}
                 onClick={
@@ -151,7 +117,7 @@ const Month: React.FunctionComponent<IProps> = (
                 type={'button'}
             >
                 {buttonDate.format('D')}
-            </button>*/
+            </button>
         })
     }
 
