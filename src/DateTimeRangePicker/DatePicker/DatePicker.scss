@@ -2,12 +2,7 @@ $color-highlight: #428be3;
 $color-background-day: rgba(black, .1);
 $color-other-month: rgba(black, .4);
 $color-disabled: rgba(black, .4);
-
-$color-already-selected-red: rgba(#FF5722, .4);
-$color-already-selected-green: rgba(#8BC34A, .4);
-$color-already-selected-yellow: rgba(#FFEB3B, .4);
-$color-already-selected-orange: rgba(#FF5722, .4);
-$color-already-selected-purple: rgba(#9C27B0, .4);
+$color-already-selected: rgba(red, .4);
 
 .date-time-range-picker .date-time-range-picker-dates{
   position: relative;
@@ -100,7 +95,7 @@ $color-already-selected-purple: rgba(#9C27B0, .4);
           }
 
           &.already-selected {
-            //background-color: $color-already-selected;
+            background-color: $color-already-selected;
             margin: .3em 0;
             padding: 0 .3em;
             border-radius: 0;
@@ -118,29 +113,9 @@ $color-already-selected-purple: rgba(#9C27B0, .4);
               margin-right: .3em;
               padding-right: 0;
             }
-            //
-            //&.active {
-            //  background-color: $color-already-selected;
-            //}
 
-            &.red {
-              background-color: $color-already-selected-red;
-            }
-
-            &.green {
-              background-color: $color-already-selected-green;
-            }
-
-            &.yellow {
-              background-color: $color-already-selected-yellow;
-            }
-
-            &.orange {
-              background-color: $color-already-selected-orange;
-            }
-
-            &.purple {
-              background-color: $color-already-selected-purple;
+            &.active {
+              background-color: $color-already-selected;
             }
           }
 

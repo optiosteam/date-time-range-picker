@@ -50,14 +50,6 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
 
     displayRanges = [dummyDates1, dummyDates2, dummyDates3]
 
-    let assignedColors = []
-    displayRanges.forEach(displayRange => {
-        const allowedColors = ['red', 'green', 'yellow', 'orange', 'purple']
-        const randomIndex = Math.floor(Math.random() * (allowedColors.length))
-        const indexOf = displayRanges.indexOf(displayRange)
-        assignedColors[indexOf] = allowedColors[randomIndex]
-    })
-    console.log(assignedColors)
 
     const [currentFromDate, setCurrentFromDate] = useState<Moment | undefined>(fromDate ? fromDate.clone() : undefined)
     const [currentUntilDate, setCurrentUntilDate] = useState<Moment | undefined>(
@@ -102,7 +94,6 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
             ? <DatePicker
                 range={range}
                 displayRanges={displayRanges}
-                assignedColors={assignedColors}
                 months={months}
                 fromDate={currentFromDate}
                 untilDate={currentUntilDate}
