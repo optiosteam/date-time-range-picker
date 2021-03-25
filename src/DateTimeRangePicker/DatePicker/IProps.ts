@@ -6,7 +6,8 @@ interface IProps {
     untilDate?: moment.Moment,
     months: number,
     onFromDateChanged: (date: Moment | undefined) => void
-    onUntilDateChanged: (date: Moment | undefined) => void
+    onUntilDateChanged: (date: Moment | undefined) => void,
+    displayRanges: []
 }
 
 export default IProps

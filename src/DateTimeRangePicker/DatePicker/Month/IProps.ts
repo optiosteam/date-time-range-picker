@@ -10,6 +10,7 @@ interface IProps {
     showDaysNextMonth: boolean,
     onDaySelected: (date: Moment) => void,
     onDayHover: (date?: Moment | undefined) => void
+    displayRanges: []
 }
 
 export default IProps
