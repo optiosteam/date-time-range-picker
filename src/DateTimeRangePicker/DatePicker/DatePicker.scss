@@ -2,6 +2,7 @@ $color-highlight: #428be3;
 $color-background-day: rgba(black, .1);
 $color-other-month: rgba(black, .4);
 $color-disabled: rgba(black, .4);
+$color-already-selected: rgba(red, .4);
 
 .date-time-range-picker .date-time-range-picker-dates{
   position: relative;
@@ -94,10 +95,28 @@ $color-disabled: rgba(black, .4);
           }
 
           &.already-selected {
-            background-color: yellow;
+            background-color: $color-already-selected;
             margin: .3em 0;
             padding: 0 .3em;
             border-radius: 0;
+
+            &.active-from-date:not(.active-from-date-reverse) {
+              border-top-left-radius: 1.5em;
+              border-bottom-left-radius: 1.5em;
+              margin-left: .3em;
+              padding-left: 0;
+            }
+
+            &.active-until-date {
+              border-top-right-radius: 1.5em;
+              border-bottom-right-radius: 1.5em;
+              margin-right: .3em;
+              padding-right: 0;
+            }
+
+            &.active {
+              background-color: $color-already-selected;
+            }
           }
 
           &.in-range {

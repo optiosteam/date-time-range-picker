@@ -22,16 +22,19 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
     }
 ) => {
 
-    
+    // dummyData
     const startDate1 = moment()
     const endDate1 = startDate1.clone().add(7, 'days')
 
-    // const startDate2 = moment().clone().set('year', 2021).set('month', 3).set('date', 10)
     const startDate2 = startDate1.clone().day(-14)
     const endDate2 = startDate2.clone().add(2, 'days')
 
+    const startDate3 = startDate1.clone().set('year', 2021).set('month', 3).set('date', 10)
+    const endDate3 = startDate3.clone().add(40, 'days')
+
     const dummyDates1 = []
     const dummyDates2 = []
+    const dummyDates3 = []
     while (startDate1.isBefore(endDate1)) {
         dummyDates1.push(startDate1.clone())
         startDate1.add(1, 'day')
@@ -40,20 +43,13 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
         dummyDates2.push(startDate2.clone())
         startDate2.add(1, 'day')
     }
-    console.log(dummyDates2)
+    while (startDate3.isBefore(endDate3)) {
+        dummyDates3.push(startDate3.clone())
+        startDate3.add(1, 'day')
+    }
 
-    displayRanges = [dummyDates1, dummyDates2]
-    // displayRanges = [dummyDates1]
+    displayRanges = [dummyDates1, dummyDates2, dummyDates3]
 
-    // const startDate = moment()
-    // const endDate = startDate.clone().add(7, 'days');
-    //
-    // const range1 = {
-    //     startDate: startDate,
-    //     endDate: endDate
-    // }
-    //
-    // displayRanges.push(range1)
 
     const [currentFromDate, setCurrentFromDate] = useState<Moment | undefined>(fromDate ? fromDate.clone() : undefined)
     const [currentUntilDate, setCurrentUntilDate] = useState<Moment | undefined>(
