@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from 'react'
-import moment, {Moment} from 'moment'
+import {Moment} from 'moment'
 
 import './DateTimeRangePicker.scss'
 import IProps from './IProps'
 import TimePicker from './TimePicker/TimePicker'
 import DatePicker from './DatePicker/DatePicker'
 import Utils from './Utils'
-import {Simulate} from 'react-dom/test-utils'
 
 const DateTimeRangePicker: React.FunctionComponent<IProps> = (
     {
@@ -33,23 +32,23 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
 
     useEffect(
         () => {
-            if (! isMounted) {
+            if (!isMounted) {
                 setIsMounted(true)
 
                 return
             }
 
-            if (! onChange) {
+            if (!onChange) {
                 return
             }
 
             const newFromDate = Utils.getDateTime(date, time, currentFromDate, currentFromTime)
-            if (! newFromDate) {
+            if (!newFromDate) {
                 return
             }
 
             const newUntilDate = Utils.getDateTime(date, time, currentUntilDate, currentUntilTime)
-            if (! newUntilDate) {
+            if (!newUntilDate) {
                 onChange(newFromDate, newFromDate)
                 return
             }
@@ -58,7 +57,6 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
         [currentFromDate, currentFromTime, currentUntilDate, currentUntilTime]
     )
 
-    // return <p>test</p>
     return <div className={'date-time-range-picker'}>
         {date
             ? <DatePicker
@@ -92,7 +90,7 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
                             onTimeChanged={
                                 (changedTime: Moment) => {
                                     setCurrentFromTime(changedTime)
-                                    if (! range) {
+                                    if (!range) {
                                         setCurrentUntilTime(changedTime)
                                     }
                                 }

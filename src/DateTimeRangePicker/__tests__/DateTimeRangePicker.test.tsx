@@ -14,6 +14,7 @@ describe('DateTimeRangePicker', () => {
                 time={false}
                 inline={true}
                 months={2}
+                displayRanges={[]}
             />
         )
 

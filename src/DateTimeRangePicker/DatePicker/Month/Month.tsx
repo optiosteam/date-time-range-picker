@@ -11,7 +11,7 @@ const Month: React.FunctionComponent<IProps> = (
         fromDate,
         untilDate,
         hoverDate,
-        showDaysPreviousMonth ,
+        showDaysPreviousMonth,
         showDaysNextMonth,
         onDaySelected,
         onDayHover
@@ -31,19 +31,21 @@ const Month: React.FunctionComponent<IProps> = (
         return dates.map((buttonDate: Moment) => {
             const classNames = []
 
-            displayRanges.forEach(displayRange => {
-                displayRange.forEach(date => {
-                    if (date.isSame(buttonDate, 'day')) {
-                        classNames.push('already-selected')
-                        if (displayRange[0].isSame(date)) {
-                            classNames.push('active-from-date')
+            if (displayRanges.length > 0) {
+                displayRanges.forEach((displayRange: Moment[]) => {
+                    displayRange.forEach((displayRangeDate: Moment) => {
+                        if (displayRangeDate.isSame(buttonDate, 'day')) {
+                            classNames.push('already-selected')
+                            if (displayRange[0].isSame(displayRangeDate)) {
+                                classNames.push('active-from-date')
 
-                        } else if (displayRange[displayRange.length - 1].isSame(date)) {
-                            classNames.push('active-until-date')
+                            } else if (displayRange[displayRange.length - 1].isSame(displayRangeDate)) {
+                                classNames.push('active-until-date')
+                            }
                         }
-                    }
+                    })
                 })
-            })
+            }
 
             if (!buttonDate.isSame(date, 'month')) {
                 if (buttonDate.isBefore(date) && !showDaysPreviousMonth) {
@@ -77,7 +79,7 @@ const Month: React.FunctionComponent<IProps> = (
 
             if (
                 fromDate
-                && ! untilDate
+                && !untilDate
                 && hoverDate
                 && (
                     buttonDate.isBetween(fromDate, hoverDate, 'day', '[]')
@@ -87,7 +89,7 @@ const Month: React.FunctionComponent<IProps> = (
                 classNames.push('hover-range')
             }
 
-            if (hoverDate  && buttonDate.isSame(hoverDate, 'day')) {
+            if (hoverDate && buttonDate.isSame(hoverDate, 'day')) {
                 classNames.push('hover')
 
                 if (fromDate && !untilDate) {
