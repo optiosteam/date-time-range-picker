@@ -14,7 +14,8 @@ const DatePicker: React.FunctionComponent<IProps> = (
         untilDate,
         months = 1,
         onFromDateChanged,
-        onUntilDateChanged
+        onUntilDateChanged,
+        assignedColors
     }
 ) => {
     const [currentDate, setCurrentDate] = React.useState<Moment>(fromDate ? fromDate.clone() : moment())
@@ -69,6 +70,7 @@ const DatePicker: React.FunctionComponent<IProps> = (
                                    }
                                }
                                displayRanges={displayRanges}
+                               assignedColors={assignedColors}
                         />
                     )
                 }

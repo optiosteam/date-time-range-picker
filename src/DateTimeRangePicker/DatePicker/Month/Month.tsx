@@ -7,12 +7,13 @@ import {CalendarButton} from './style'
 const Month: React.FunctionComponent<IProps> = (
     {
         displayRanges,
+        assignedColors,
         month,
         year,
         fromDate,
         untilDate,
         hoverDate,
-        showDaysPreviousMonth ,
+        showDaysPreviousMonth,
         showDaysNextMonth,
         onDaySelected,
         onDayHover
@@ -30,129 +31,105 @@ const Month: React.FunctionComponent<IProps> = (
         }
 
         return dates.map((buttonDate: Moment) => {
-            const classNames = []
-                let active: boolean = false
-                let alreadySelected: string|undefined
-                let activeFromDate: boolean = false
-                let activeUntilDate: boolean = false
-                let otherMonth: boolean = false
-                let activeFromDateReverse: boolean = false
-                let inRange: boolean = false
-                let hover: boolean = false
-                let hoverPast: boolean = false
-                let hoverFuture: boolean = false
+                const classNames = []
 
-            displayRanges.forEach(displayRange => {
-                displayRange.forEach(date => {
-                    if (date.isSame(buttonDate, 'day')) {
-                        classNames.push('already-selected')
-                        alreadySelected = 'red'
-                        if (displayRange[0].isSame(date)) {
-                            classNames.push('active-from-date')
+                displayRanges.forEach(displayRange => {
+                    assignedColors.forEach(assignedColor => {
+                        const indexOf = displayRanges.indexOf(displayRange)
+                        if (assignedColors.indexOf(assignedColor) === displayRanges.indexOf(displayRange)) {
+                            classNames.push(assignedColors[indexOf])
+                        }
+                    })
+                    displayRange.forEach(date => {
+                        if (date.isSame(buttonDate, 'day')) {
+                            classNames.push('already-selected')
 
-                        } else if (displayRange[displayRange.length - 1].isSame(date)) {
-                            classNames.push('active-until-date')
+
+                            if (displayRange[0].isSame(date)) {
+                                classNames.push('active-from-date')
+
+                            } else if (displayRange[displayRange.length - 1].isSame(date)) {
+                                classNames.push('active-until-date')
+                            }
+                        }
+                    })
+                })
+
+                if (!buttonDate.isSame(date, 'month')) {
+                    if (buttonDate.isBefore(date) && !showDaysPreviousMonth) {
+                        return <span className={'dummy-day'} key={`day${buttonDate.format('YYYYMMDD')}`}/>
+                    }
+
+                    if (buttonDate.isAfter(date) && !showDaysNextMonth) {
+                        return <span className={'dummy-day'} key={`day${buttonDate.format('YYYYMMDD')}`}/>
+                    }
+
+                    classNames.push('other-month')
+                }
+
+                if (fromDate && buttonDate.isSame(fromDate, 'day')) {
+                    classNames.push('active')
+                    classNames.push('active-from-date')
+
+                    if (!untilDate && hoverDate && hoverDate.isBefore(buttonDate, 'day')) {
+                        classNames.push('active-from-date-reverse')
+                    }
+                }
+
+                if (untilDate && buttonDate.isSame(untilDate, 'day')) {
+                    classNames.push('active')
+                    classNames.push('active-until-date')
+                }
+
+                if (fromDate && untilDate && buttonDate.isBetween(fromDate, untilDate, 'day', '[]')) {
+                    classNames.push('in-range')
+                }
+
+                if (
+                    fromDate
+                    && !untilDate
+                    && hoverDate
+                    && (
+                        buttonDate.isBetween(fromDate, hoverDate, 'day', '[]')
+                        || buttonDate.isBetween(hoverDate, fromDate, 'day', '[]')
+                    )
+                ) {
+                    classNames.push('hover-range')
+                }
+
+                if (hoverDate && buttonDate.isSame(hoverDate, 'day')) {
+                    classNames.push('hover')
+
+                    if (fromDate && !untilDate) {
+                        if (fromDate.isAfter(buttonDate, 'day')) {
+                            classNames.push('hover-past')
+                        }
+
+                        if (fromDate.isBefore(buttonDate, 'day')) {
+                            classNames.push('hover-future')
                         }
                     }
-                })
-            })
-
-            if (!buttonDate.isSame(date, 'month')) {
-                if (buttonDate.isBefore(date) && !showDaysPreviousMonth) {
-                    return <span className={'dummy-day'} key={`day${buttonDate.format('YYYYMMDD')}`}/>
                 }
 
-                if (buttonDate.isAfter(date) && !showDaysNextMonth) {
-                    return <span className={'dummy-day'} key={`day${buttonDate.format('YYYYMMDD')}`}/>
-                }
-
-                classNames.push('other-month')
-                otherMonth = true
-            }
-
-            if (fromDate && buttonDate.isSame(fromDate, 'day')) {
-                classNames.push('active')
-                active = true
-                classNames.push('active-from-date')
-
-                if (!untilDate && hoverDate && hoverDate.isBefore(buttonDate, 'day')) {
-                    classNames.push('active-from-date-reverse')
-                }
-            }
-
-            if (untilDate && buttonDate.isSame(untilDate, 'day')) {
-                classNames.push('active')
-                classNames.push('active-until-date')
-            }
-
-            if (fromDate && untilDate && buttonDate.isBetween(fromDate, untilDate, 'day', '[]')) {
-                classNames.push('in-range')
-            }
-
-            if (
-                fromDate
-                && ! untilDate
-                && hoverDate
-                && (
-                    buttonDate.isBetween(fromDate, hoverDate, 'day', '[]')
-                    || buttonDate.isBetween(hoverDate, fromDate, 'day', '[]')
-                )
-            ) {
-                classNames.push('hover-range')
-            }
-
-            if (hoverDate  && buttonDate.isSame(hoverDate, 'day')) {
-                classNames.push('hover')
-
-                if (fromDate && !untilDate) {
-                    if (fromDate.isAfter(buttonDate, 'day')) {
-                        classNames.push('hover-past')
+                return <button
+                    key={`day${buttonDate.format('YYYYMMDD')}`}
+                    className={classNames.join(' ')}
+                    onClick={
+                        () => {
+                            onDaySelected(buttonDate.clone())
+                        }
                     }
-
-                    if (fromDate.isBefore(buttonDate, 'day')) {
-                        classNames.push('hover-future')
+                    onMouseEnter={
+                        () => {
+                            onDayHover(buttonDate.clone())
+                        }
                     }
-                }
+                    type={'button'}
+                >
+                    {buttonDate.format('D')}
+                </button>
             }
-
-            return <CalendarButton
-                key={`day${buttonDate.format('YYYYMMDD')}`}
-                onClick={
-                    () => {
-                        onDaySelected(buttonDate.clone())
-                    }
-                }
-                onMouseEnter={
-                    () => {
-                        onDayHover(buttonDate.clone())
-                    }
-                }
-                type={'button'}
-                otherMonth={otherMonth}
-                active={active}
-                alreadySelected={alreadySelected}
-            >
-                {buttonDate.format('D')}
-            </CalendarButton>
-
-            /*<button
-                key={`day${buttonDate.format('YYYYMMDD')}`}
-                className={classNames.join(' ')}
-                onClick={
-                    () => {
-                        onDaySelected(buttonDate.clone())
-                    }
-                }
-                onMouseEnter={
-                    () => {
-                        onDayHover(buttonDate.clone())
-                    }
-                }
-                type={'button'}
-            >
-                {buttonDate.format('D')}
-            </button>*/
-        })
+        )
     }
 
     return <div className={'date-time-range-picker-month'}>
