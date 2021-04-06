@@ -5,7 +5,7 @@ import moment from 'moment'
 import IProps from './IProps'
 import './TimePicker.scss'
 
-const TimePicker: FunctionComponent<IProps> = ({ step = 15, onTimeChanged, time}) => {
+const TimePicker: FunctionComponent<IProps> = ({ step = 15, onTimeChanged, time, isDisabled}) => {
     const [currentValue, setCurrentValue] = useState<string | undefined>(time ? time.format('HH:mm') : undefined)
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const dropdownRef = useRef<HTMLDivElement | any>()
@@ -76,9 +76,9 @@ const TimePicker: FunctionComponent<IProps> = ({ step = 15, onTimeChanged, time}
     return <div className={`time-picker ${isOpen ? 'open' : null}`}>
         <Cleave options={{time: true, timePattern: ['h', 'm']}}
                 placeholder={'00:00'}
-                onChange={onChange}
-                onFocus={() => setIsOpen(true)}
-                onBlur={onBlur}
+                // onChange={onChange}
+                // onFocus={() => setIsOpen(true)}
+                // onBlur={onBlur}
                 value={currentValue}
                 className={'time-picker-input'}
                 onKeyDown={
@@ -96,7 +96,7 @@ const TimePicker: FunctionComponent<IProps> = ({ step = 15, onTimeChanged, time}
                     return <div key={`timeValue${index}`}
                                 className={isActive(timeValue) ? 'active' : undefined}
                                 ref={isActive(timeValue) ? activeDropdownRef : undefined}
-                                onClick={() => onSelect(timeValue)}
+                                // onClick={() => onSelect(timeValue)}
                     >
                         {timeValue}
                     </div>

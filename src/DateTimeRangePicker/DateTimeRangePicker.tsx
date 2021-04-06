@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {Moment} from 'moment'
+import moment, {Moment} from 'moment'
 
 import './DateTimeRangePicker.scss'
 import IProps from './IProps'
@@ -14,10 +14,11 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
         displayRanges = [],
         time = false,
         inline = true,
-        fromDate,
-        untilDate,
+        fromDate= moment(),
+        untilDate = moment().set('date', 19),
         months = 1,
-        onChange
+        onChange,
+        isDisabled = true
     }
 ) => {
     const [currentFromDate, setCurrentFromDate] = useState<Moment | undefined>(fromDate ? fromDate.clone() : undefined)
@@ -58,43 +59,44 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
     )
 
     return <div className={'date-time-range-picker'}>
-        {date
+        {date && true === isDisabled
             ? <DatePicker
                 range={range}
                 displayRanges={displayRanges}
                 months={months}
                 fromDate={currentFromDate}
                 untilDate={currentUntilDate}
-                onFromDateChanged={
-                    (changedDate: Moment | undefined) => {
-                        setCurrentFromDate(changedDate)
-                    }
-                }
-                onUntilDateChanged={
-                    (changedDate: Moment | undefined) => {
-                        setCurrentUntilDate(changedDate)
-                    }
-                }
+                // onFromDateChanged={
+                //     (changedDate: Moment | undefined) => {
+                //         setCurrentFromDate(changedDate)
+                //     }
+                // }
+                // onUntilDateChanged={
+                //     (changedDate: Moment | undefined) => {
+                //         setCurrentUntilDate(changedDate)
+                //     }
+                // }
             />
             : null
         }
 
         {
-            time
+            time && true === isDisabled
                 ? <div className={'date-time-range-picker-times'}>
                     <div>
                         <label>{range ? 'From' : 'Time'}</label>
                         <TimePicker
                             step={15}
                             time={currentFromTime}
-                            onTimeChanged={
-                                (changedTime: Moment) => {
-                                    setCurrentFromTime(changedTime)
-                                    if (!range) {
-                                        setCurrentUntilTime(changedTime)
-                                    }
-                                }
-                            }
+                            // onTimeChanged={
+                            //     (changedTime: Moment) => {
+                            //         setCurrentFromTime(changedTime)
+                            //         if (!range) {
+                            //             setCurrentUntilTime(changedTime)
+                            //         }
+                            //     }
+                            // }
+                            isDisabled={isDisabled}
                         />
                     </div>
                     {
@@ -104,11 +106,12 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
                                 <TimePicker
                                     step={15}
                                     time={currentUntilTime}
-                                    onTimeChanged={
-                                        (changedTime: Moment) => {
-                                            setCurrentUntilTime(changedTime)
-                                        }
-                                    }
+                                    // onTimeChanged={
+                                    //     (changedTime: Moment) => {
+                                    //         setCurrentUntilTime(changedTime)
+                                    //     }
+                                    // }
+                                    isDisabled={isDisabled}
                                 />
                             </div>
                             : null
