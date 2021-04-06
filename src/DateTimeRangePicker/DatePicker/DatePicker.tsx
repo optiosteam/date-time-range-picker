@@ -14,7 +14,8 @@ const DatePicker: React.FunctionComponent<IProps> = (
         untilDate,
         months = 1,
         onFromDateChanged,
-        onUntilDateChanged
+        onUntilDateChanged,
+        isDisabled = false
     }
 ) => {
     const [currentDate, setCurrentDate] = React.useState<Moment>(fromDate ? fromDate.clone() : moment())
@@ -47,11 +48,14 @@ const DatePicker: React.FunctionComponent<IProps> = (
                                hoverDate={hoverDate}
                                onDaySelected={
                                    (selectedDate: Moment) => {
-                                       if (!fromDate || (fromDate && untilDate)) {
-                                           onFromDateChanged(selectedDate.clone())
-                                           onUntilDateChanged(range ? undefined : selectedDate.clone())
+                                       if (isDisabled) {
                                            return
                                        }
+                                           if (!fromDate || (fromDate && untilDate)) {
+                                               onFromDateChanged(selectedDate.clone())
+                                               onUntilDateChanged(range ? undefined : selectedDate.clone())
+                                               return
+                                           }
 
                                        if (selectedDate.isBefore(fromDate)) {
                                            onFromDateChanged(selectedDate.clone())
@@ -65,6 +69,9 @@ const DatePicker: React.FunctionComponent<IProps> = (
                                }
                                onDayHover={
                                    (onHoverDate: Moment | undefined) => {
+                                       if (isDisabled) {
+                                           return
+                                       }
                                        setHoverDate(onHoverDate)
                                    }
                                }

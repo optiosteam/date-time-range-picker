@@ -5,7 +5,7 @@ import moment from 'moment'
 import IProps from './IProps'
 import './TimePicker.scss'
 
-const TimePicker: FunctionComponent<IProps> = ({ step = 15, onTimeChanged, time, isDisabled}) => {
+const TimePicker: FunctionComponent<IProps> = ({step = 15, onTimeChanged, time, isDisabled}) => {
     const [currentValue, setCurrentValue] = useState<string | undefined>(time ? time.format('HH:mm') : undefined)
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const dropdownRef = useRef<HTMLDivElement | any>()
@@ -13,10 +13,14 @@ const TimePicker: FunctionComponent<IProps> = ({ step = 15, onTimeChanged, time,
     let inputRef: HTMLInputElement
 
     const onChange = (e: SyntheticEvent<HTMLInputElement>) => {
+        if (isDisabled) {
+            return
+        }
+
         setCurrentValue(e.currentTarget.value)
 
         const changedTime = moment(e.currentTarget.value, 'HH:mm')
-        if (! changedTime.isValid()) {
+        if (!changedTime.isValid()) {
             return
         }
 
@@ -30,6 +34,10 @@ const TimePicker: FunctionComponent<IProps> = ({ step = 15, onTimeChanged, time,
     }
 
     const onBlur = (e: SyntheticEvent<HTMLInputElement>) => {
+        if (isDisabled) {
+            return
+        }
+
         setCurrentValue(e.currentTarget.value)
         setTimeout(
             () => setIsOpen(false),
@@ -37,7 +45,7 @@ const TimePicker: FunctionComponent<IProps> = ({ step = 15, onTimeChanged, time,
         )
 
         const changedTime = moment(e.currentTarget.value, 'HH:mm')
-        if (! changedTime.isValid()) {
+        if (!changedTime.isValid()) {
             return
         }
 
@@ -48,6 +56,10 @@ const TimePicker: FunctionComponent<IProps> = ({ step = 15, onTimeChanged, time,
     }
 
     const onSelect = (timeValue: string) => {
+        if (isDisabled) {
+            return
+        }
+
         setCurrentValue(timeValue)
 
         const changedTime = moment(timeValue, 'HH:mm')
@@ -64,7 +76,7 @@ const TimePicker: FunctionComponent<IProps> = ({ step = 15, onTimeChanged, time,
 
     const isActive = (timeValue: string): boolean => {
         const currentTime = moment(currentValue, 'HH:mm')
-        if (! currentTime.isValid()) {
+        if (!currentTime.isValid()) {
             return false
         }
 
@@ -73,37 +85,44 @@ const TimePicker: FunctionComponent<IProps> = ({ step = 15, onTimeChanged, time,
         return currentTime.format('HH:mm') === timeValue
     }
 
-    return <div className={`time-picker ${isOpen ? 'open' : null}`}>
-        <Cleave options={{time: true, timePattern: ['h', 'm']}}
-                placeholder={'00:00'}
-                // onChange={onChange}
-                // onFocus={() => setIsOpen(true)}
-                // onBlur={onBlur}
-                value={currentValue}
-                className={'time-picker-input'}
-                onKeyDown={
-                    (e: KeyboardEvent | any) => {
-                        if (e.key === 'Enter' && inputRef) {
-                            inputRef.blur()
-                        }
-                    }
-                }
-                htmlRef={(element: HTMLInputElement) => inputRef = element}
-        />
-        <div className={'time-picker-dropdown'} ref={dropdownRef}>
+    return (
+        <div className={`time-picker ${isOpen ? 'open' : null}`}>
             {
-                timeValues.map((timeValue, index) => {
-                    return <div key={`timeValue${index}`}
-                                className={isActive(timeValue) ? 'active' : undefined}
-                                ref={isActive(timeValue) ? activeDropdownRef : undefined}
-                                // onClick={() => onSelect(timeValue)}
-                    >
-                        {timeValue}
+                <>
+                    <Cleave options={{time: true, timePattern: ['h', 'm']}}
+                            placeholder={'00:00'}
+                            onChange={onChange}
+                            onFocus={() => setIsOpen(true)}
+                            onBlur={onBlur}
+                            value={currentValue}
+                            className={'time-picker-input'}
+                            onKeyDown={
+                                (e: KeyboardEvent | any) => {
+                                    if (e.key === 'Enter' && inputRef) {
+                                        inputRef.blur()
+                                    }
+                                }
+                            }
+                            htmlRef={(element: HTMLInputElement) => inputRef = element}
+                            disabled={isDisabled}
+                    />
+                    <div className={'time-picker-dropdown'} ref={dropdownRef}>
+                        {
+                            timeValues.map((timeValue, index) => {
+                                return <div key={`timeValue${index}`}
+                                            className={isActive(timeValue) ? 'active' : undefined}
+                                            ref={isActive(timeValue) ? activeDropdownRef : undefined}
+                                            onClick={() => onSelect(timeValue)}
+                                >
+                                    {timeValue}
+                                </div>
+                            })
+                        }
                     </div>
-                })
+                </>
             }
         </div>
-    </div>
+    )
 }
 
 export default TimePicker
