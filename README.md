@@ -39,6 +39,7 @@ Example with property Range enabled
 | `untilDate` | `Moment`        |  set a date to where the user can select to                |
 | `months`         | `number`        | the number of months you want to show default: 1                                                      |
 | `onChange`        | `function`           | pass a custom function to handle the changes detected in the calendar : (fromDate, untilDate) => console.log(fromDate, untilDate)                                                     |
+| `displayRanges`        | `array`           | pass an array of arrays. Each of those arrays are a range, consisting of a from date and until date. These only display
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import moment, {Moment} from 'moment'
+import {Moment} from 'moment'
 
 import './DateTimeRangePicker.scss'
 import IProps from './IProps'
@@ -11,12 +11,14 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
     {
         date = true,
         range = false,
+        displayRanges = [],
         time = false,
         inline = true,
         fromDate,
         untilDate,
         months = 1,
-        onChange
+        onChange,
+        isDisabled = false
     }
 ) => {
     const [currentFromDate, setCurrentFromDate] = useState<Moment | undefined>(fromDate ? fromDate.clone() : undefined)
@@ -31,23 +33,23 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
 
     useEffect(
         () => {
-            if (! isMounted) {
+            if (!isMounted) {
                 setIsMounted(true)
 
                 return
             }
 
-            if (! onChange) {
+            if (!onChange) {
                 return
             }
 
             const newFromDate = Utils.getDateTime(date, time, currentFromDate, currentFromTime)
-            if (! newFromDate) {
+            if (!newFromDate) {
                 return
             }
 
             const newUntilDate = Utils.getDateTime(date, time, currentUntilDate, currentUntilTime)
-            if (! newUntilDate) {
+            if (!newUntilDate) {
                 onChange(newFromDate, newFromDate)
                 return
             }
@@ -60,6 +62,7 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
         {date
             ? <DatePicker
                 range={range}
+                displayRanges={displayRanges}
                 months={months}
                 fromDate={currentFromDate}
                 untilDate={currentUntilDate}
@@ -73,6 +76,7 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
                         setCurrentUntilDate(changedDate)
                     }
                 }
+                isDisabled={isDisabled}
             />
             : null
         }
@@ -88,11 +92,12 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
                             onTimeChanged={
                                 (changedTime: Moment) => {
                                     setCurrentFromTime(changedTime)
-                                    if (! range) {
+                                    if (!range) {
                                         setCurrentUntilTime(changedTime)
                                     }
                                 }
                             }
+                            isDisabled={isDisabled}
                         />
                     </div>
                     {
@@ -107,6 +112,7 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
                                             setCurrentUntilTime(changedTime)
                                         }
                                     }
+                                    isDisabled={isDisabled}
                                 />
                             </div>
                             : null
