@@ -9,6 +9,8 @@ interface IProps {
     untilDate?: Moment,
     months?: number,
     onChange?: (fromDateTime: Moment, untilDateTime?: Moment) => void
+    displayRanges?: [],
+    isDisabled?: boolean
 }
 
 export default IProps

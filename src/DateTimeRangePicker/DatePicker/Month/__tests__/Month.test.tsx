@@ -14,6 +14,7 @@ describe('Date/time range picker month', () => {
                 showDaysNextMonth={true}
                 onDaySelected={() => undefined}
                 onDayHover={() => undefined}
+                displayRanges={[]}
             />
         )
 
@@ -31,6 +32,7 @@ describe('Date/time range picker month', () => {
                 showDaysNextMonth={true}
                 onDaySelected={onDaySelectedMock}
                 onDayHover={() => undefined}
+                displayRanges={[]}
             />
         )
 
@@ -50,6 +52,7 @@ describe('Date/time range picker month', () => {
                 showDaysNextMonth={true}
                 onDaySelected={() => undefined}
                 onDayHover={onHoverMock}
+                displayRanges={[]}
             />
         )
 
@@ -69,6 +72,7 @@ describe('Date/time range picker month', () => {
                 hoverDate={moment('2020-05-10')}
                 onDaySelected={() => undefined}
                 onDayHover={() => undefined}
+                displayRanges={[]}
             />
         )
 
@@ -86,6 +90,7 @@ describe('Date/time range picker month', () => {
                 untilDate={moment('2020-05-15')}
                 onDaySelected={() => undefined}
                 onDayHover={() => undefined}
+                displayRanges={[]}
             />
         )
 
