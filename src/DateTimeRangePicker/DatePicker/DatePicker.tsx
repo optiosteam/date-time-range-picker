@@ -1,23 +1,29 @@
-import React from 'react'
+import React, {useState} from 'react'
 import moment, {Moment} from 'moment'
 
 import './DatePicker.scss'
 import IProps from './IProps'
 import Month from './Month/Month'
 import Header from './Header/Header'
+import {TCalendarMode} from './TCalendarMode'
+import {YearView} from './YearView/YearView'
 
 const DatePicker: React.FunctionComponent<IProps> = (
     {
         range = false,
         fromDate,
         untilDate,
+        initialDate,
         months = 1,
         onFromDateChanged,
-        onUntilDateChanged
+        onUntilDateChanged,
     }
 ) => {
-    const [currentDate, setCurrentDate] = React.useState<Moment>(fromDate ? fromDate.clone() : moment())
-    const [hoverDate, setHoverDate] = React.useState<Moment>()
+    const [calendarMode, setCalendarMode] = useState<TCalendarMode>('normal')
+    const [currentDate, setCurrentDate] = useState<Moment>(fromDate
+        ? fromDate.clone()
+        : initialDate ?  initialDate : moment())
+    const [hoverDate, setHoverDate] = useState<Moment | undefined>(initialDate || undefined)
 
     const monthsArray = []
     for (let monthIndex = 0; monthIndex < months; monthIndex++) {
@@ -31,6 +37,16 @@ const DatePicker: React.FunctionComponent<IProps> = (
                 months={months}
                 onPrevMonth={() => setCurrentDate(currentDate.clone().subtract(1, 'month'))}
                 onNextMonth={() => setCurrentDate(currentDate.clone().add(1, 'month'))}
+                onPrevYear={() => setCurrentDate(currentDate.clone().subtract(1, 'year'))}
+                onNextYear={() => setCurrentDate(currentDate.clone().add(1, 'year'))}
+                calendarMode={calendarMode}
+                setCalendarMode={setCalendarMode}
+        />
+        <YearView
+            isRender={calendarMode === 'year'}
+            setCalendarMode={setCalendarMode}
+            currentDate={currentDate}
+            setCurrentDate={setCurrentDate}
         />
         <div className={'date-time-range-picker-months'}>
             {monthsArray.map(
