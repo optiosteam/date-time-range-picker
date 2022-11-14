@@ -11,6 +11,10 @@ describe('Date/time range picker header', () => {
                     months={1}
                     onPrevMonth={() => { return }}
                     onNextMonth={() => { return }}
+                    onNextYear={() => { return }}
+                    onPrevYear={() => { return }}
+                    calendarMode={'normal'}
+                    setCalendarMode={() => { return }}
             />
         )
 
@@ -26,6 +30,10 @@ describe('Date/time range picker header', () => {
                     months={1}
                     onPrevMonth={onPrevMonthHandler}
                     onNextMonth={onNextMonthHandler}
+                    onNextYear={() => { return }}
+                    onPrevYear={() => { return }}
+                    calendarMode={'normal'}
+                    setCalendarMode={() => { return }}
             />
         )
         component.find('.date-time-range-picker-header-prev').simulate('click')

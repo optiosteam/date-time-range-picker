@@ -12,8 +12,9 @@ exports[`Date/time range picker header should render correctly 1`] = `
     «
   </button>
   <div
-    className="date-time-range-picker-header-month"
+    className="date-time-range-picker-header-month normal"
     key="monthHeader0"
+    onClick={[Function]}
   >
     October 2019
   </div>
