@@ -16,7 +16,7 @@ const DatePicker: React.FunctionComponent<IProps> = (
         initialDate,
         months = 1,
         onFromDateChanged,
-        onUntilDateChanged,
+        onUntilDateChanged
     }
 ) => {
     const [calendarMode, setCalendarMode] = useState<TCalendarMode>('normal')
