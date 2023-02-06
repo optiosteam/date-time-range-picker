@@ -1,5 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import moment, {Moment} from 'moment'
+import 'moment/locale/nl'
+import 'moment/locale/fr'
+import 'moment/locale/de'
 
 import './DateTimeRangePicker.scss'
 import IProps from './IProps'
@@ -15,8 +18,10 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
         inline = true,
         fromDate,
         untilDate,
+        initialDate,
         months = 1,
-        onChange
+        onChange,
+        calendarLocale = 'en'
     }
 ) => {
     const [currentFromDate, setCurrentFromDate] = useState<Moment | undefined>(fromDate ? fromDate.clone() : undefined)
@@ -28,6 +33,7 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
     (untilDate ? untilDate.clone() : undefined
     )
     const [isMounted, setIsMounted] = useState<boolean>(false)
+    moment.locale(calendarLocale)
 
     useEffect(
         () => {
@@ -63,6 +69,7 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
                 months={months}
                 fromDate={currentFromDate}
                 untilDate={currentUntilDate}
+                initialDate={initialDate}
                 onFromDateChanged={
                     (changedDate: Moment | undefined) => {
                         setCurrentFromDate(changedDate)

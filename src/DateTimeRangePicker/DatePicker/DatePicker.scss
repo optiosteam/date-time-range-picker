@@ -1,30 +1,42 @@
 $color-highlight: #428be3;
 $color-background-day: rgba(black, .1);
 $color-other-month: rgba(black, .4);
-$color-disabled: rgba(black, .4);
+$color-disabled: rgba(16, 16, 16, 0.3);
+$color-disabled-background: #e6e6e6;
 
 .date-time-range-picker .date-time-range-picker-dates{
   position: relative;
 
   .date-time-range-picker-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 
     .date-time-range-picker-header-month {
-      width: 19.3em;
       line-height: 2em;
       margin: .3em 0;
       text-align: center;
-
+      padding: 0 .5em;
       + {
         .date-time-range-picker-header-month {
           margin-left: 1em;
         }
       }
     }
+    .date-time-range-picker-header-month:hover{
+      background-color: $color-highlight;
+      color: white;
+      cursor: pointer;
+    }
+    .date-time-range-picker-header-month.year{
+      background-color: $color-disabled-background;
+      color: $color-disabled;
+      pointer: none;
+    }
 
     .date-time-range-picker-header-prev,
-    .date-time-range-picker-header-next {
+    .date-time-range-picker-header-next,
+    .date-time-range-picker-header-prev-year,
+    .date-time-range-picker-header-next-year{
       position: absolute;
       margin: .3em;
       border-radius: 2em;
@@ -44,6 +56,34 @@ $color-disabled: rgba(black, .4);
 
     .date-time-range-picker-header-next {
       right: 0;
+    }
+    .date-time-range-picker-header-prev-year {
+      left: 45px;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    .date-time-range-picker-header-next-year {
+      right: 45px;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+  }
+
+  .date-time-range-picker-year-mode {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    button.monthButton{
+      background-color: white;
+      flex: 0 0 33.3333%;
+      overflow: hidden;
+    }
+    button.monthButton:hover{
+      cursor: pointer;
+      background-color: $color-disabled-background;
     }
   }
 
