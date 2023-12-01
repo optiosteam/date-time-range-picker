@@ -14,7 +14,7 @@ interface IProps {
     initialDate?: Moment
     months?: number,
     onChange?: (fromDateTime: Moment, untilDateTime?: Moment) => void
-    onMonthChange?: (month: IMonth) => void
+    onMonthChange?: (month: { month: string; convertedDate: string; momentObject: moment.Moment }[]) => void
     calendarLocale?: TCalendarLocaleSupport
 }
 

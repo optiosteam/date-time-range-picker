@@ -11,7 +11,7 @@ interface IProps {
     months: number,
     onFromDateChanged: (date: Moment | undefined) => void
     onUntilDateChanged: (date: Moment | undefined) => void
-    onMonthChange?: (month: { month: string; convertedDate: string; momentObject: moment.Moment }) => void
+    onMonthChange?: (month: { month: string; convertedDate: string; momentObject: moment.Moment }[]) => void
 }
 
 export default IProps

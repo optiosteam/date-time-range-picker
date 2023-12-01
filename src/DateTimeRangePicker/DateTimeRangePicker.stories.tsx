@@ -70,7 +70,7 @@ export const selectedRange = () => {
             'starts_at': '2023-12-13 09:00:00',
             'ends_at': '2023-12-20 23:00:42',
             'reason': 'holidaayy'
-        },
+        }
     ]
     return(
         <DateTimeRangePicker
@@ -89,4 +89,3 @@ export const rangeWithMultipleMonths  = () => (
         onChange={(date, date2) => console.log(date, date2)}
       />
     )
-
