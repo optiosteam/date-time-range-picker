@@ -21,6 +21,7 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
         initialDate,
         months = 1,
         onChange,
+        onMonthChange,
         calendarLocale = 'en'
     }
 ) => {
@@ -43,7 +44,7 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
                 return
             }
 
-            if (! onChange) {
+            if (!onChange || !onMonthChange) {
                 return
             }
 
@@ -70,6 +71,7 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
                 fromDate={currentFromDate}
                 untilDate={currentUntilDate}
                 initialDate={initialDate}
+                onMonthChange={onMonthChange}
                 onFromDateChanged={
                     (changedDate: Moment | undefined) => {
                         setCurrentFromDate(changedDate)

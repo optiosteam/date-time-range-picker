@@ -1,5 +1,6 @@
 import {Moment} from 'moment'
 import {TCalendarLocaleSupport} from './TCalendarLocaleSupport'
+import {IMonth} from './DatePicker/interfaces/IMonth'
 
 interface IProps {
     date?: boolean,
@@ -11,6 +12,7 @@ interface IProps {
     initialDate?: Moment
     months?: number,
     onChange?: (fromDateTime: Moment, untilDateTime?: Moment) => void
+    onMonthChange?: (month: IMonth) => void
     calendarLocale?: TCalendarLocaleSupport
 }
 

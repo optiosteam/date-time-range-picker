@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import moment, {Moment} from 'moment'
 
 import './DatePicker.scss'
-import IProps from './IProps'
+import IProps from './interfaces/IProps'
 import Month from './Month/Month'
 import Header from './Header/Header'
 import {TCalendarMode} from './TCalendarMode'
@@ -16,7 +16,8 @@ const DatePicker: React.FunctionComponent<IProps> = (
         initialDate,
         months = 1,
         onFromDateChanged,
-        onUntilDateChanged
+        onUntilDateChanged,
+        onMonthChange
     }
 ) => {
     const [calendarMode, setCalendarMode] = useState<TCalendarMode>('normal')
@@ -35,8 +36,28 @@ const DatePicker: React.FunctionComponent<IProps> = (
     return <div className={'date-time-range-picker-dates'} style={{width: `${width}em`}}>
         <Header date={currentDate}
                 months={months}
-                onPrevMonth={() => setCurrentDate(currentDate.clone().subtract(1, 'month'))}
-                onNextMonth={() => setCurrentDate(currentDate.clone().add(1, 'month'))}
+                onPrevMonth={() => {
+                    const newDates = Array.from({length: months}, (_, i) => {
+                        return currentDate.clone().subtract(i + 1, 'month');
+                    })
+                    setCurrentDate(newDates[0])
+                    onMonthChange && onMonthChange(newDates.map(date => ({
+                        month: date.format('MMMM'),
+                        convertedDate: date.format('YYYY-MM-DD'),
+                        momentObject: date
+                    })))
+                }}
+                onNextMonth={() => {
+                    const newDates = Array.from({length: months}, (_, i) => {
+                        return currentDate.clone().add(i + 1, 'month');
+                    });
+                    setCurrentDate(newDates[0]);
+                    onMonthChange && onMonthChange(newDates.map(date => ({
+                        month: date.format('MMMM'),
+                        convertedDate: date.format('YYYY-MM-DD'),
+                        momentObject: date,
+                    })));
+                }}
                 onPrevYear={() => setCurrentDate(currentDate.clone().subtract(1, 'year'))}
                 onNextYear={() => setCurrentDate(currentDate.clone().add(1, 'year'))}
                 calendarMode={calendarMode}
