@@ -13,7 +13,8 @@ const Month: React.FunctionComponent<IProps> = (
         showDaysPreviousMonth ,
         showDaysNextMonth,
         onDaySelected,
-        onDayHover
+        onDayHover,
+        data
     }
 ) => {
     const date = moment(`${month}-${year}`, 'M-YYYY')
@@ -22,6 +23,7 @@ const Month: React.FunctionComponent<IProps> = (
         const currentDate = date.clone().startOf('month').startOf('week')
         const endDate = date.clone().endOf('month').endOf('week')
         const dates: Moment[] = []
+
         while (currentDate.isBefore(endDate)) {
             dates.push(currentDate.clone())
             currentDate.add(1, 'day')
@@ -29,6 +31,31 @@ const Month: React.FunctionComponent<IProps> = (
 
         return dates.map((buttonDate: Moment) => {
             const classNames = []
+            let reason = ''
+
+            if (data) {
+                    data.forEach(d => {
+                        const startIncomingDataDate = moment(d.starts_at)
+                        const endIncomingDataDate = moment(d.ends_at)
+                        if (buttonDate.isSame(startIncomingDataDate, 'day') &&
+                            !startIncomingDataDate.isSame(endIncomingDataDate, 'day')) {
+                            classNames.push('selected', 'selected-active-from-date')
+                            reason = d.reason
+                        } else if (buttonDate.isSame(endIncomingDataDate, 'day') &&
+                            !startIncomingDataDate.isSame(endIncomingDataDate, 'day')) {
+                            classNames.push('selected', 'selected-active-until-date')
+                            reason = d.reason
+                        } else if (buttonDate.isSame(startIncomingDataDate, 'day') &&
+                            startIncomingDataDate.isSame(endIncomingDataDate, 'day')) {
+                            classNames.push('selected')
+                            reason = d.reason
+                        } else if (buttonDate.isBetween(startIncomingDataDate, endIncomingDataDate, 'day', '[]')) {
+                            classNames.push('selected', 'selected-active-in-range')
+                            reason = d.reason
+                        }
+                    })
+                }
+
             if (! buttonDate.isSame(date, 'month')) {
                 if (buttonDate.isBefore(date) && ! showDaysPreviousMonth) {
                     return <span className={'dummy-day'} key={`day${buttonDate.format('YYYYMMDD')}`}/>
@@ -99,6 +126,7 @@ const Month: React.FunctionComponent<IProps> = (
                     }
                 }
                 type={'button'}
+                title={`Reason: ${reason}`}
             >
                 {buttonDate.format('D')}
             </button>

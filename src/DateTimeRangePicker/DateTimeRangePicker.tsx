@@ -13,6 +13,7 @@ import Utils from './Utils'
 const DateTimeRangePicker: React.FunctionComponent<IProps> = (
     {
         date = true,
+        data,
         range = false,
         time = false,
         inline = true,
@@ -67,6 +68,7 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
         {date
             ? <DatePicker
                 range={range}
+                data={data}
                 months={months}
                 fromDate={currentFromDate}
                 untilDate={currentUntilDate}

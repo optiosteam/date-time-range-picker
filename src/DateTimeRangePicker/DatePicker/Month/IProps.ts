@@ -1,4 +1,5 @@
 import {Moment} from 'moment'
+import {IData} from '../interfaces/IData'
 
 interface IProps {
     month: number,
@@ -10,6 +11,7 @@ interface IProps {
     showDaysNextMonth: boolean,
     onDaySelected: (date: Moment) => void,
     onDayHover: (date?: Moment | undefined) => void
+    data?: IData[];
 }
 
 export default IProps

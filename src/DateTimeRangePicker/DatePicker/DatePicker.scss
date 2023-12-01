@@ -133,6 +133,42 @@ $color-disabled-background: #e6e6e6;
             color: white;
           }
 
+          &.selected {
+            background: rgba(233,164,38,0.8);
+            color: #fff;
+          }
+
+          &.selected-active-from-date {
+            border-radius: 0;
+            border-top-left-radius: 1.5em;
+            border-bottom-left-radius: 1.5em;
+            margin-left: 0.3em;
+            padding-left: 0;
+            margin: 0.3em 0;
+            padding: 0 0.3em;
+          }
+
+          &.selected-active-until-date {
+            border-radius: 0;
+            border-top-right-radius: 1.5em;
+            border-bottom-right-radius: 1.5em;
+            margin-right: 0.3em;
+            padding-right: 0;
+            margin: 0.3em 0;
+            padding: 0 0.3em;
+          }
+
+          &.selected-active-in-range{
+            background: rgba(233,164,38,0.5);
+            margin: 0.3em 0;
+            padding: 0 0.3em;
+            border-radius: 0;
+          }
+
+          &.selected:hover {
+            background: rgba(233,164,38,0.5);
+          }
+
           &.in-range {
             background-color: rgba($color-highlight, .5);
             margin: .3em 0;
@@ -209,6 +245,13 @@ $color-disabled-background: #e6e6e6;
           }
         }
       }
+
+      .date-time-range-picker-month-days > button {
+        &.selected-active-in-range:hover {
+          background: rgba(233,164,38,0.5);
+        }
+      }
+
 
       .dummy-day {
         width: 2.1em;

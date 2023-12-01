@@ -7,9 +7,11 @@ import Month from './Month/Month'
 import Header from './Header/Header'
 import {TCalendarMode} from './TCalendarMode'
 import {YearView} from './YearView/YearView'
+import {IData} from './interfaces/IData'
 
 const DatePicker: React.FunctionComponent<IProps> = (
     {
+        data,
         range = false,
         fromDate,
         untilDate,
@@ -33,12 +35,14 @@ const DatePicker: React.FunctionComponent<IProps> = (
 
     const width = (18.9 * months) + (months - 1)
 
+
+
     return <div className={'date-time-range-picker-dates'} style={{width: `${width}em`}}>
         <Header date={currentDate}
                 months={months}
                 onPrevMonth={() => {
                     const newDates = Array.from({length: months}, (_, i) => {
-                        return currentDate.clone().subtract(i + 1, 'month');
+                        return currentDate.clone().subtract(i + 1, 'month')
                     })
                     setCurrentDate(newDates[0])
                     onMonthChange && onMonthChange(newDates.map(date => ({
@@ -49,14 +53,14 @@ const DatePicker: React.FunctionComponent<IProps> = (
                 }}
                 onNextMonth={() => {
                     const newDates = Array.from({length: months}, (_, i) => {
-                        return currentDate.clone().add(i + 1, 'month');
-                    });
-                    setCurrentDate(newDates[0]);
+                        return currentDate.clone().add(i + 1, 'month')
+                    })
+                    setCurrentDate(newDates[0])
                     onMonthChange && onMonthChange(newDates.map(date => ({
                         month: date.format('MMMM'),
                         convertedDate: date.format('YYYY-MM-DD'),
-                        momentObject: date,
-                    })));
+                        momentObject: date
+                    })))
                 }}
                 onPrevYear={() => setCurrentDate(currentDate.clone().subtract(1, 'year'))}
                 onNextYear={() => setCurrentDate(currentDate.clone().add(1, 'year'))}
@@ -73,7 +77,9 @@ const DatePicker: React.FunctionComponent<IProps> = (
             {monthsArray.map(
                 (monthIndex: number) => {
                     return (
-                        <Month month={Number(currentDate.clone().add(monthIndex, 'month').format('M'))}
+                        <Month
+                            data={data}
+                            month={Number(currentDate.clone().add(monthIndex, 'month').format('M'))}
                                year={Number(currentDate.clone().add(monthIndex, 'month').format('YYYY'))}
                                key={`month${monthIndex}`}
                                showDaysPreviousMonth={monthIndex === 0}
