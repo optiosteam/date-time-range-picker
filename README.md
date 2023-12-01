@@ -27,18 +27,27 @@ Example with property Time enabled
 
 Example with property Range enabled
 ![Range picture](https://i.imgur.com/aZhwQWO.png)
-
+```
+export interface IData  {
+    uuid?: string
+    starts_at: string
+    ends_at: string
+    reason: string
+}
+```
 ## Properties
 
 | property              | type            | description                                                                                  |
 | --------------------- | --------------- | -------------------------------------------------------------------------------------------- |
-| `date`    | `boolean` | set to `false` to disable the date selection                                                              |
+| `date`    | `boolean` | set to `false` to disable the date selection             
+| `data` | `IData[]`    | accepts a data object so that can show selected dates
 | `time`     | `boolean`           | set to `true` to display the time below the calendar                                                           |
 | `range`          | `boolean`        | set to `true` to select multiple days value                                                                      |
 | `fromDate`        | `Moment` | set a date from where the user can start to select from |
 | `untilDate` | `Moment`        |  set a date to where the user can select to                |
 | `months`         | `number`        | the number of months you want to show default: 1                                                      |
 | `onChange`        | `function`           | pass a custom function to handle the changes detected in the calendar : (fromDate, untilDate) => console.log(fromDate, untilDate)                                                     |
+| `onMonthChange`        | `function`           | pass a custom function to handle the detected when changes from month switch : (newDate) => {console.log('Month changed: ', newDate)                                                |
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
