@@ -1,5 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+import toJson from 'enzyme-to-json'
 
 import moment from 'moment'
 import TimePicker from '../TimePicker'
@@ -10,7 +11,7 @@ describe('Date/time range picker month', () => {
             <TimePicker step={20} onTimeChanged={() => undefined}/>
         )
 
-        expect(component).toMatchSnapshot()
+        expect(toJson(component)).toMatchSnapshot()
         expect(component.find('.time-picker-dropdown div').length).toEqual(72)
     })
 

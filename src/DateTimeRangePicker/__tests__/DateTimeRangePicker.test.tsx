@@ -1,5 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+import toJson from 'enzyme-to-json'
 
 import DateTimeRangePicker from '../DateTimeRangePicker'
 import moment from 'moment'
@@ -17,6 +18,6 @@ describe('DateTimeRangePicker', () => {
             />
         )
 
-        expect(component).toMatchSnapshot()
+        expect(toJson(component)).toMatchSnapshot()
     })
 })

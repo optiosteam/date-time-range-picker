@@ -1,5 +1,6 @@
  import React from 'react'
  import { shallow } from 'enzyme'
+ import toJson from 'enzyme-to-json'
 
  import Header from '../Header'
  import moment from 'moment'
@@ -14,7 +15,7 @@
             />
         )
 
-        expect(component).toMatchSnapshot()
+        expect(toJson(component)).toMatchSnapshot()
     })
 
     it('should call function on month navigation', () => {
