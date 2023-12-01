@@ -1,5 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+import toJson from 'enzyme-to-json'
 
 import Month from '../Month'
 import moment from 'moment'
@@ -17,7 +18,7 @@ describe('Date/time range picker month', () => {
             />
         )
 
-        expect(component).toMatchSnapshot()
+        expect(toJson(component)).toMatchSnapshot()
     })
 
     it('should call selected callback', () => {

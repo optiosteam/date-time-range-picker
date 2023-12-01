@@ -1,10 +1,11 @@
-import React from 'react'
-import { shallow } from 'enzyme'
+ import React from 'react'
+ import { shallow } from 'enzyme'
+ import toJson from 'enzyme-to-json'
 
-import Header from '../Header'
-import moment from 'moment'
+ import Header from '../Header'
+ import moment from 'moment'
 
-describe('Date/time range picker header', () => {
+ describe('Date/time range picker header', () => {
     it('should render correctly', () => {
         const component = shallow(
             <Header date={moment('2019-10-15 18:23:15', 'YYYY-MM-DD HH:mm:ss')}
@@ -18,7 +19,7 @@ describe('Date/time range picker header', () => {
             />
         )
 
-        expect(component).toMatchSnapshot()
+        expect(toJson(component)).toMatchSnapshot()
     })
 
     it('should call function on month navigation', () => {
