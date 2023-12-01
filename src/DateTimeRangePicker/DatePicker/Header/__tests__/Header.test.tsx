@@ -1,10 +1,10 @@
-import React from 'react'
-import { shallow } from 'enzyme'
+ import React from 'react'
+ import { shallow } from 'enzyme'
 
-import Header from '../Header'
-import moment from 'moment'
+ import Header from '../Header'
+ import moment from 'moment'
 
-describe('Date/time range picker header', () => {
+ describe('Date/time range picker header', () => {
     it('should render correctly', () => {
         const component = shallow(
             <Header date={moment('2019-10-15 18:23:15', 'YYYY-MM-DD HH:mm:ss')}
