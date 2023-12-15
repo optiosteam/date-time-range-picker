@@ -1,6 +1,6 @@
 {
   "name": "@optios/react-date-time-range-picker",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -108,5 +108,8 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "keywords": [],
-  "author": ""
+  "author": "",
+  "engines": {
+    "node": "=12"
+  }
 }

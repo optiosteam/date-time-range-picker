@@ -5,12 +5,26 @@ import 'moment/locale/fr'
 import 'moment/locale/de'
 
 import './DateTimeRangePicker.scss'
-import IProps from './IProps'
 import TimePicker from './TimePicker/TimePicker'
 import DatePicker from './DatePicker/DatePicker'
 import Utils from './Utils'
 
-const DateTimeRangePicker: React.FunctionComponent<IProps> = (
+type TCalendarLocaleSupport = 'nl' | 'en' | 'de' | 'fr'
+
+interface IProps {
+    date?: boolean,
+    time?: boolean,
+    range?: boolean,
+    inline?: boolean,
+    fromDate?: Moment,
+    untilDate?: Moment,
+    initialDate?: Moment
+    months?: number,
+    onChange?: (fromDateTime: Moment, untilDateTime?: Moment) => void
+    calendarLocale?: TCalendarLocaleSupport
+}
+
+const DateTimeRangePicker = (
     {
         date = true,
         range = false,
@@ -22,7 +36,7 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
         months = 1,
         onChange,
         calendarLocale = 'en'
-    }
+    }: IProps
 ) => {
     const [currentFromDate, setCurrentFromDate] = useState<Moment | undefined>(fromDate ? fromDate.clone() : undefined)
     const [currentUntilDate, setCurrentUntilDate] = useState<Moment | undefined>(
@@ -59,7 +73,7 @@ const DateTimeRangePicker: React.FunctionComponent<IProps> = (
             }
             onChange(newFromDate, newUntilDate)
         },
-        [currentFromDate, currentFromTime, currentUntilDate, currentUntilTime]
+        [currentFromDate, currentFromTime, currentUntilDate, currentUntilTime, date, isMounted, onChange, time]
     )
 
     return <div className={'date-time-range-picker'}>
