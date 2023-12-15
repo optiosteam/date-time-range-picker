@@ -2,13 +2,22 @@ import React, {useState} from 'react'
 import moment, {Moment} from 'moment'
 
 import './DatePicker.scss'
-import IProps from './IProps'
 import Month from './Month/Month'
 import Header from './Header/Header'
-import {TCalendarMode} from './TCalendarMode'
 import {YearView} from './YearView/YearView'
+import {TCalendarMode} from './TCalendarMode'
 
-const DatePicker: React.FunctionComponent<IProps> = (
+interface IProps {
+    range: boolean,
+    fromDate?: Moment,
+    untilDate?: Moment,
+    initialDate?: Moment
+    months: number,
+    onFromDateChanged: (date: Moment | undefined) => void
+    onUntilDateChanged: (date: Moment | undefined) => void
+}
+
+const DatePicker = (
     {
         range = false,
         fromDate,
@@ -17,7 +26,7 @@ const DatePicker: React.FunctionComponent<IProps> = (
         months = 1,
         onFromDateChanged,
         onUntilDateChanged
-    }
+    }: IProps
 ) => {
     const [calendarMode, setCalendarMode] = useState<TCalendarMode>('normal')
     const [currentDate, setCurrentDate] = useState<Moment>(fromDate

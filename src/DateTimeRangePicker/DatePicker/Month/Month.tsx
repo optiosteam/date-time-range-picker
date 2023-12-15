@@ -1,9 +1,19 @@
-import React, {ReactElement, useState} from 'react'
+import React, {ReactElement} from 'react'
 import moment, {Moment} from 'moment'
 
-import IProps from './IProps'
+interface IProps {
+    month: number,
+    year: number,
+    fromDate?: Moment,
+    untilDate?: Moment,
+    hoverDate?: Moment,
+    showDaysPreviousMonth: boolean,
+    showDaysNextMonth: boolean,
+    onDaySelected: (date: Moment) => void,
+    onDayHover: (date?: Moment | undefined) => void
+}
 
-const Month: React.FunctionComponent<IProps> = (
+const Month = (
     {
         month,
         year,
@@ -14,7 +24,7 @@ const Month: React.FunctionComponent<IProps> = (
         showDaysNextMonth,
         onDaySelected,
         onDayHover
-    }
+    }: IProps
 ) => {
     const date = moment(`${month}-${year}`, 'M-YYYY')
 

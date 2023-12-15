@@ -1,11 +1,16 @@
-import React, {FunctionComponent, SyntheticEvent, useRef, useState} from 'react'
+import React, { SyntheticEvent, useRef, useState} from 'react'
 import Cleave from 'cleave.js/react'
-import moment from 'moment'
+import moment, { Moment } from 'moment'
 
-import IProps from './IProps'
 import './TimePicker.scss'
 
-const TimePicker: FunctionComponent<IProps> = ({ step = 15, onTimeChanged, time}) => {
+interface IProps {
+    time?: Moment,
+    step: number,
+    onTimeChanged: (time: Moment) => void
+}
+
+const TimePicker = ({ step = 15, onTimeChanged, time}: IProps) => {
     const [currentValue, setCurrentValue] = useState<string | undefined>(time ? time.format('HH:mm') : undefined)
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const dropdownRef = useRef<HTMLDivElement | any>()

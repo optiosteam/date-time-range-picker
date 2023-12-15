@@ -1,8 +1,15 @@
-import React, {FunctionComponent} from 'react'
-import {IProps} from './IProps'
-import moment from 'moment/moment'
+import React from 'react'
+import moment, {Moment} from 'moment/moment'
+import {TCalendarMode} from '../TCalendarMode'
 
-export const YearView: FunctionComponent<IProps> = ({isRender, currentDate, setCurrentDate, setCalendarMode}) => {
+interface IProps {
+    isRender: boolean
+    currentDate: Moment
+    setCurrentDate: (date: Moment) => void
+    setCalendarMode: (mode: TCalendarMode) => void
+}
+
+export const YearView = ({isRender, currentDate, setCurrentDate, setCalendarMode}: IProps) => {
     if (!isRender) {
         return null
     }

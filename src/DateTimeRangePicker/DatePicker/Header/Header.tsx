@@ -1,8 +1,20 @@
 import React from 'react'
 
-import IProps from './IProps'
+import moment from 'moment'
+import {TCalendarMode} from '../TCalendarMode'
 
-const Header: React.FunctionComponent<IProps> = ({
+interface IProps {
+    date: moment.Moment,
+    months: number,
+    onNextMonth: () => void,
+    onPrevMonth: () => void
+    onNextYear: () => void
+    onPrevYear: () => void
+    calendarMode: TCalendarMode
+    setCalendarMode: (mode: TCalendarMode) => void
+}
+
+const Header = ({
    date,
    months,
    onPrevMonth,
@@ -11,7 +23,7 @@ const Header: React.FunctionComponent<IProps> = ({
    setCalendarMode,
    onPrevYear,
    onNextYear
-}) => {
+}: IProps) => {
     const monthsArray = []
     for (let monthIndex = 0; monthIndex < months; monthIndex++) {
         monthsArray.push(monthIndex)
